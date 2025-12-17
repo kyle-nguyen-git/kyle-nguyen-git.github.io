@@ -1,0 +1,25 @@
+/* Kyle custom overrides (safe to edit) */
+:root {
+  --accent: #4f46e5; /* indigo */
+}
+
+/* Global typography */
+body, input, select, textarea {
+  letter-spacing: 0.01em;
+}
+
+/* Link + button accent */
+a:hover { color: var(--accent) !important; }
+.button.primary, input[type="submit"].primary {
+  background-color: var(--accent) !important;
+  box-shadow: none;
+}
+
+/* Make tiles feel more modern */
+.tiles article {
+  border-radius: 18px;
+  overflow: hidden;
+}
+.tiles article > a:hover {
+  transform: translateY(-4px);
+}
