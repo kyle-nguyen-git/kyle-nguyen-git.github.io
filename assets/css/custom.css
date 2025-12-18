@@ -1,25 +1,93 @@
 /* Kyle custom overrides (safe to edit) */
+/* =========================
+   Kyle — Dark Theme
+   ========================= */
+
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Color variables */
 :root {
-  --accent: #4f46e5; /* indigo */
+  --bg-main: #111111;        /* main background */
+  --bg-secondary: #1a1a1a;   /* cards / sections */
+  --text-main: #e5e5e5;      /* primary text */
+  --text-muted: #b3b3b3;     /* secondary text */
+  --accent: #6366f1;         /* indigo accent */
 }
 
-/* Global typography */
-body, input, select, textarea {
-  letter-spacing: 0.01em;
+/* Global background + text */
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
 }
 
-/* Link + button accent */
-a:hover { color: var(--accent) !important; }
-.button.primary, input[type="submit"].primary {
-  background-color: var(--accent) !important;
-  box-shadow: none;
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-main);
+  font-weight: 600;
 }
 
-/* Make tiles feel more modern */
+/* Paragraphs + lists */
+p, li {
+  color: var(--text-muted);
+}
+
+/* Links */
+a {
+  color: var(--text-main);
+}
+a:hover {
+  color: var(--accent) !important;
+}
+
+/* Header spacing looks better without logo */
+#header {
+  background: transparent;
+}
+
+/* Main content wrapper */
+#main {
+  background: transparent;
+}
+
+/* Tiles (project cards) */
 .tiles article {
+  background-color: var(--bg-secondary);
   border-radius: 18px;
   overflow: hidden;
 }
+
+/* Tile text */
+.tiles article h2 {
+  color: #ffffff;
+}
+.tiles article p {
+  color: var(--text-muted);
+}
+
+/* Tile hover effect */
 .tiles article > a:hover {
   transform: translateY(-4px);
+}
+
+/* Footer */
+#footer {
+  background-color: #0d0d0d;
+}
+#footer h2 {
+  color: var(--text-main);
+}
+#footer p,
+#footer li,
+#footer a {
+  color: var(--text-muted);
+}
+
+/* Buttons */
+.button.primary,
+input[type="submit"].primary {
+  background-color: var(--accent) !important;
+  color: #ffffff !important;
+  box-shadow: none;
 }
