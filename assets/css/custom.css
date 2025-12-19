@@ -76,3 +76,8 @@ input[type="submit"].primary {
   letter-spacing: 0.02em;
   color: var(--text-main);
 }
+
+/* Extra spacing between tile groups and next section header */
+.tiles + .section-header {
+  margin-top: 5rem;
+}
