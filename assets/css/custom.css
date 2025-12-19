@@ -59,3 +59,20 @@ input[type="submit"].primary {
   color: #ffffff !important;
   box-shadow: none;
 }
+/* =========================
+   Section Headers
+   ========================= */
+
+.section-header {
+  margin-top: 3.5rem;
+  margin-bottom: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.section-header h2 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--text-main);
+}
