@@ -81,3 +81,10 @@ input[type="submit"].primary {
 .tiles + .section-header {
   margin-top: 5rem;
 }
+
+/* Remove Phantom diagonal overlay on tiles */
+.tiles article > a::before,
+.tiles article > a::after {
+  display: none !important;
+}
+
