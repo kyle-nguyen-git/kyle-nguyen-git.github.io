@@ -10,6 +10,12 @@
   --text-main: #e5e5e5;
   --text-muted: #b3b3b3;
   --accent: #6366f1;
+
+  /* Unified tile overlay palette (3–4 colors total) */
+  --tile-research: #4f5d73;   /* slate-blue */
+  --tile-projects: #5f8f8b;   /* muted teal */
+  --tile-neutral:  #6b6e70;   /* warm gray (optional) */
+  --tile-featured: #7a6f9b;   /* soft highlight (optional) */
 }
 
 /* Global */
@@ -127,23 +133,38 @@ a:hover { color: var(--accent) !important; }
 }
 
 /* =========================
-    TILE COLOR OVERRIDES (MUST BE LAST)
+   TILE COLOR OVERRIDES (MUST BE LAST)
+   Palette-based, not brand-based
    ========================= */
 
-/* NYU — Softer Purple */
+/* Research tiles (NYU + UTMB) */
+.tiles article.style1 > a::before,
+.tiles article.style1 > .image::before,
 .tiles article.style2 > a::before,
 .tiles article.style2 > .image::before {
-  background: #7a4ea3 !important;
+  background: var(--tile-research) !important;
 }
 
-/* Callalily — Blue/Green */
-.tiles article.callalily > a::before,
-.tiles article.callalily > .image::before {
-  background: #6ecfd1 !important;
+/* Project & venture tiles (ParkNow, Hope Full Farms, 1 Item 2 Guys, Nuzzle, etc.) */
+.tiles article.style3 > a::before,
+.tiles article.style3 > .image::before,
+.tiles article.style4 > a::before,
+.tiles article.style4 > .image::before,
+.tiles article.style5 > a::before,
+.tiles article.style5 > .image::before,
+.tiles article.style6 > a::before,
+.tiles article.style6 > .image::before {
+  background: var(--tile-projects) !important;
 }
 
-/* UTMB — Muted UT Orange */
-.tiles article.style1 > a::before,
-.tiles article.style1 > .image::before {
-  background: #c46a2a !important; /* softened UT orange */
+/* Optional: make ONE tile special by adding class="featured" in index.html */
+.tiles article.featured > a::before,
+.tiles article.featured > .image::before {
+  background: var(--tile-featured) !important;
+}
+
+/* Optional: a neutral variant if you want a calmer tile (class="neutral") */
+.tiles article.neutral > a::before,
+.tiles article.neutral > .image::before {
+  background: var(--tile-neutral) !important;
 }
