@@ -231,3 +231,40 @@ a:hover { color: var(--text-main) !important; }
 #footer a {
   color: var(--text-muted);
 }
+
+/* =========================
+   FIX: Center tile text again
+   ========================= */
+
+/* Keep Phantom's centered layout for tile content */
+.tiles article > a {
+  position: relative; /* anchor content positioning */
+}
+
+.tiles article > a .content {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  text-align: center;
+  padding: 0 1.5rem;
+}
+
+/* Optional: keep description from feeling too wide */
+.tiles article > a .content p {
+  max-width: 26rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =========================
+   Bigger titles for Projects & Ventures only
+   (second tiles section on the page)
+   ========================= */
+
+/* Targets the SECOND .tiles block (Projects & Ventures) */
+.tiles:nth-of-type(2) article h2 {
+  font-size: 1.18rem !important;
+  line-height: 1.25;
+}
