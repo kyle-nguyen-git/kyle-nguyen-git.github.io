@@ -92,19 +92,20 @@
             </div>
           </section>
 
-          <!-- Tools -->
-          <section>
-            <h2>Tools &amp; Methods</h2>
-            <ul>
-              <li>APOBEC-style mutation simulation across coding transcripts</li>
-              <li>Mutant 9-mer peptide generation and library construction</li>
-              <li>Immunopeptidomics detection using <strong>TesorAI</strong></li>
-              <li>Gene essentiality prioritization using <strong>DepMap CERES</strong></li>
-              <li>HLA binding prediction using <strong>NetMHCpan 4.1</strong></li>
-              <li>Peptide stability filtering using <strong>NetMHCStabPan</strong></li>
-              <li>Early extension to <strong>transposable elements (TEs)</strong></li>
-            </ul>
-          </section>
+          <!-- Tools & Methods -->
+<section class="box">
+  <h2>Tools &amp; Methods</h2>
+  <ul>
+    <li><strong>Languages:</strong> Python, Bash/Shell</li>
+    <li><strong>Python stack:</strong> pandas, NumPy, Biopython (FASTA/sequence parsing), matplotlib (quick QC plots)</li>
+    <li><strong>Data handling:</strong> large tabular joins/filters, deduplication, mutation-site indexing, reproducible file outputs (CSV/TSV/FASTA)</li>
+    <li><strong>HPC workflows:</strong> job scheduling (Slurm), batch runs, environment management (conda/modules), large file I/O on shared storage</li>
+    <li><strong>Peptide generation logic:</strong> overlapping 9-mer windows around mutation sites; WT vs mutant comparisons; peptide library construction</li>
+    <li><strong>Immunology-facing outputs:</strong> formatting for downstream prediction &amp; prioritization tools (binding/presentation/stability scoring)</li>
+    <li><strong>Integration / datasets:</strong> immunopeptidomics screening (TesorAI workflow outputs), essentiality prioritization (DepMap CERES), HLA binding prediction (NetMHCpan / NetMHCStabPan)</li>
+    <li><strong>Reproducibility:</strong> parameterized scripts, consistent naming/versioned outputs, traceable mapping (mutation → protein → peptide)</li>
+  </ul>
+</section>
 
           <!-- Contact -->
           <section>
