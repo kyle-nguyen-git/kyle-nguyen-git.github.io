@@ -37,7 +37,6 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="nyu-research.html">NYU Research</a></li>
-          <!-- Add more pages here later -->
         </ul>
       </nav>
 
@@ -45,92 +44,87 @@
       <div id="main">
         <div class="inner">
 
+          <!-- Title -->
           <header class="major">
             <h1>Computational Pipeline for Cancer Neoantigen Discovery</h1>
-            <p>
-              NYU Grossman School of Medicine — Summer Undergraduate Research Program (2025)
-            </p>
+            <p>NYU Grossman School of Medicine (2025)</p>
           </header>
 
-          <span class="image main">
-            <img src="images/nyu-neoantigens.png" alt="Cancer neoantigen pipeline" />
-          </span>
-
-          <section>
-            <h2>Overview</h2>
-            <p>
-              During my summer at NYU Grossman, I worked on a computational pipeline focused on identifying
-              cancer-relevant neoantigen candidates from mutation-driven peptide changes. My work emphasized
-              building reproducible data processing steps, generating peptide libraries, and preparing outputs
-              for downstream immunology-focused filtering and prioritization.
+          <!-- Overview (no "Overview" label) -->
+          <div class="box">
+            <p style="margin-bottom: 0;">
+              During my summer at NYU Grossman, I worked on a computational pipeline focused on identifying cancer-relevant neoantigen
+              candidates from mutation-driven peptide changes. My work emphasized building reproducible data processing steps, generating
+              peptide libraries, and preparing outputs for downstream immunology-focused filtering and prioritization.
             </p>
-          </section>
+          </div>
 
+          <!-- Poster -->
           <section>
-            <h2>Core Question</h2>
+            <h2>Poster</h2>
             <p>
-              Can we systematically simulate and prioritize mutation-derived peptides that could be presented
-              on MHC class I and serve as actionable therapeutic targets?
+              <a href="images/nyu-poster.pdf" target="_blank" rel="noopener">View / download poster (PDF)</a>
             </p>
-          </section>
 
-          <section>
-            <h2>What I Built</h2>
-            <ul>
-              <li><strong>Mutation-to-peptide generation:</strong> converted mutation tables into mutant protein sequences and overlapping 8–11mer peptides.</li>
-              <li><strong>Wild-type comparisons:</strong> reconstructed WT counterparts to distinguish “truly novel” peptides vs unchanged sequence windows.</li>
-              <li><strong>Filtering-ready outputs:</strong> formatted peptide tables for prediction tools (binding + prioritization workflows).</li>
-              <li><strong>Reproducible organization:</strong> consistent file structure, naming, and run logs to support scaling + re-runs.</li>
-            </ul>
-          </section>
+            <!-- Inline embed (works great on desktop; some mobile browsers may fall back to opening the PDF) -->
+            <div class="box" style="padding: 0; overflow: hidden;">
+              <embed
+                src="images/nyu-poster.pdf"
+                type="application/pdf"
+                width="100%"
+                height="900px"
+              />
+            </div>
 
-          <section>
-            <h2>Methods &amp; Tools</h2>
-            <ul>
-              <li>Python (pandas, Biopython), shell scripting</li>
-              <li>HPC workflows (job scheduling, large file I/O, batch runs)</li>
-              <li>Peptide generation logic (overlapping windows around mutation sites)</li>
-              <li>Downstream compatibility with prediction tools (e.g., binding / presentation scoring)</li>
-            </ul>
-
+            <!-- Fallback if embed doesn’t render -->
             <p style="margin-top: 1rem;">
-              <em>Note:</em> I’m keeping some details general on purpose — I can expand this later with more specific
-              figures/results once you decide what you want public.
+              If the PDF doesn’t display above, use the link: <a href="images/nyu-poster.pdf" target="_blank" rel="noopener">nyu-poster.pdf</a>.
             </p>
           </section>
 
+          <!-- Abstract -->
           <section>
-            <h2>Outputs</h2>
-            <ul>
-              <li>Cleaned peptide libraries suitable for prediction pipelines</li>
-              <li>Traceable mapping between mutation → protein → peptide windows</li>
-              <li>Tables structured for quick filtering and comparison</li>
-            </ul>
+            <h2>Abstract</h2>
+
+            <div class="box">
+              <p>
+                Neoantigens—peptides uniquely presented on tumor cells—are emerging as targets for next-generation immunotherapies,
+                including T-cell receptor (TCR) and Peptide-Centric CAR-T cell therapies. APOBEC3A, a cytidine deaminase frequently
+                upregulated in cancer, introduces C&gt;T mutations that can give rise to novel neoantigens. We developed a computational
+                pipeline to simulate APOBEC3A-like mutations across 35,608 coding transcripts and identify high-confidence 9-mer peptides
+                suitable for immune targeting.
+              </p>
+
+              <p>
+                From 69,247 mutation sites, we generated 58,591 unique mutant peptides. We used 77 breast cancer immunopeptidomics datasets
+                to detect their presence (TesorAI) narrowing this to 2,530; DepMap CERES scores prioritized 322 from essential genes.
+                NetMHCpan 4.1 predicted strong HLA binding for 69 peptides, and NetMHCStabPan further refined this to 13 stable candidates.
+              </p>
+
+              <p style="margin-bottom: 0;">
+                We also began extending this pipeline to transposable elements (TEs), which are frequent APOBEC substrates and may harbor
+                overlooked neoantigen sources. This work provides a framework for identifying mutation-derived peptides with strong MHC
+                presentation potential—critical for expanding the scope of CAR-T cell therapies beyond shared antigens.
+              </p>
+            </div>
           </section>
 
+          <!-- Everything else -->
           <section>
-            <h2>What I Learned</h2>
+            <h2>Project Focus</h2>
             <ul>
-              <li>How small assumptions (reference choice, mapping rules, windowing) can bias results</li>
-              <li>How to design pipelines so they’re testable, debuggable, and scalable</li>
-              <li>How to communicate computational results clearly to a wet-lab / translational audience</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2>Next Steps</h2>
-            <ul>
-              <li>Add a simple figure showing the pipeline flow (inputs → transformations → outputs)</li>
-              <li>Include a “Results Snapshot” section (counts, examples, QC checks)</li>
-              <li>Link posters/talks (ABRCMS / LANS etc.) when ready</li>
+              <li>Simulate APOBEC3A-like mutation patterns across coding transcripts</li>
+              <li>Generate candidate 9-mer mutant peptides</li>
+              <li>Prioritize candidates using immunopeptidomics evidence, essentiality, and predicted HLA binding/stability</li>
+              <li>Begin extending the approach to transposable elements as an additional neoantigen source</li>
             </ul>
           </section>
 
           <section>
             <h2>Contact</h2>
             <p>
-              If you want to reach out, email me at
-              <a href="mailto:kylenguyen@utexas.edu">kylenguyen@utexas.edu</a>.
+              If you have questions about this project, feel free to reach out to me here:
+              <a href="mailto:Kyle.Kylenguyen@nyulangone.org">Kyle.Kylenguyen@nyulangone.org</a>.
             </p>
           </section>
 
@@ -142,7 +136,7 @@
         <div class="inner">
           <ul class="icons">
             <li>
-              <a href="mailto:kylenguyen@utexas.edu" class="icon solid fa-envelope">
+              <a href="mailto:Kyle.Kylenguyen@nyulangone.org" class="icon solid fa-envelope">
                 <span class="label">Email</span>
               </a>
             </li>
