@@ -165,3 +165,32 @@ a:hover { color: var(--accent) !important; }
 .tiles article.style6 > .image::before {
   background: var(--tile-projects) !important;
 }
+
+/* =========================
+   Hover: keep a dark overlay (Phantom-style)
+   ========================= */
+
+/* When hovering a tile, DO NOT make the overlay disappear.
+   Keep it darker so white text is readable. */
+.tiles article > a:hover::before,
+.tiles article > a:hover .image::before {
+  opacity: 0.92 !important;     /* higher = darker overlay */
+}
+
+/* Optional: if the image still feels too bright, dim it slightly on hover */
+.tiles article > a:hover .image img {
+  filter: brightness(0.85) contrast(1.05);
+}
+
+/* =========================
+   REMOVE Phantom diagonal "X" completely
+   ========================= */
+
+/* Kill BOTH diagonal lines */
+.tiles article > a::before,
+.tiles article > a::after,
+.tiles article > .image::before,
+.tiles article > .image::after {
+  content: none !important;
+  display: none !important;
+}
