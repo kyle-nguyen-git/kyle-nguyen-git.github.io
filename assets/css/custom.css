@@ -111,7 +111,8 @@ input[type="submit"].primary {
   line-height: 1.5;
 }
 
-/* Improve contrast for tile descriptions */
+/* Make tile descriptions white for maximum contrast */
 .tiles article .content p {
-  color: #d1d5db;  /* light cool gray, higher contrast */
+  color: #ffffff;
 }
+
