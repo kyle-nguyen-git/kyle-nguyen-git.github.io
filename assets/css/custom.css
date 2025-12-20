@@ -135,16 +135,18 @@ a:hover { color: var(--text-main) !important; }
 
 /* =========================
    REMOVE Phantom diagonal “X”
-   (keep the overlay layers so hover still works)
+   Keep overlays, just remove diagonal pattern
    ========================= */
 
-/* Keep ::after alive (Phantom uses this for hover feel), just remove the diagonal graphic */
+/* Kill the diagonal layer that Phantom draws */
 .tiles article > a::after {
-  display: block !important;
+  display: none !important;
+  opacity: 0 !important;
+  background: none !important;
   background-image: none !important;
 }
 
-/* Also strip any diagonal background images from other layers */
+/* If Phantom bakes diagonal stripes into background-image on ::before, strip ONLY the image */
 .tiles article > a::before,
 .tiles article > .image::before,
 .tiles article > .image::after,
@@ -152,59 +154,54 @@ a:hover { color: var(--text-main) !important; }
 .tiles article::after {
   background-image: none !important;
 }
+
 /* =========================
    Overlays
    (Alternate 3 colors across tiles in EACH tiles section)
    ========================= */
 
-/* Base overlay strength */
+/* Keep overlay visible */
 .tiles article > a::before,
 .tiles article > .image::before {
-  opacity: 0.82 !important;
+  opacity: 0.86 !important; /* base overlay strength */
 }
 
-/* On hover: reduce overlay so image becomes clearer */
-.tiles article:hover > a::before,
-.tiles article:hover > .image::before {
-  opacity: 0.62 !important;   /* try 0.55–0.70 */
+/* Alternate overlay colors */
+.tiles article:nth-child(3n + 1) > a::before,
+.tiles article:nth-child(3n + 1) > .image::before {
+  background: var(--tile-a) !important;
 }
 
-/* Make the image pop a bit on hover */
-.tiles article:hover > .image img {
-  filter: brightness(1.06) contrast(1.04) !important;
+.tiles article:nth-child(3n + 2) > a::before,
+.tiles article:nth-child(3n + 2) > .image::before {
+  background: var(--tile-b) !important;
 }
 
-/* Optional: remove your extra box-shadow film completely */
-.tiles article:hover > .image {
-  box-shadow: none !important;
+.tiles article:nth-child(3n) > a::before,
+.tiles article:nth-child(3n) > .image::before {
+  background: var(--tile-c) !important;
 }
+
 /* =========================
-   Hover behavior (FIXED selectors)
+   Hover behavior (Phantom-like)
    ========================= */
 
-/* Smooth transitions so you can actually see the change */
-.tiles article > .image,
-.tiles article > .image img,
-.tiles article > a::before,
-.tiles article > .image::before {
-  transition: opacity 0.25s ease, filter 0.25s ease, box-shadow 0.25s ease;
+/* Keep overlay but darken slightly */
+.tiles article > a:hover::before,
+.tiles article > a:hover .image::before {
+  opacity: 0.92 !important;
 }
 
-/* Overlay: keep it, but don't darken as much */
-.tiles article:hover > a::before,
-.tiles article:hover > .image::before {
-  opacity: 0.88 !important;  /* try 0.84–0.90 */
+/* Dim image a bit on hover */
+.tiles article > a:hover .image img {
+  filter: brightness(0.98) contrast(1.02);
 }
 
-/* Image: make it clearer on hover */
-.tiles article:hover > .image img {
-  filter: brightness(1.02) contrast(1.03) !important; /* or `filter: none !important;` */
+/* Extra film layer */
+.tiles article > a:hover .image {
+  box-shadow: inset 0 0 0 9999px var(--hover-film);
 }
 
-/* Film layer: lighter (your variable controls darkness) */
-.tiles article:hover > .image {
-  box-shadow: inset 0 0 0 9999px var(--hover-film) !important;
-}
 /* =========================
    Projects titles slightly larger than Research
    (Targets the SECOND tiles section in your layout)
