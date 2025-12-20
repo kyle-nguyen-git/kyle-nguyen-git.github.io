@@ -127,17 +127,23 @@ a:hover { color: var(--accent) !important; }
 }
 
 /* =========================
-   🔥 TILE COLOR OVERRIDES (MUST BE LAST)
+    TILE COLOR OVERRIDES (MUST BE LAST)
    ========================= */
 
-/* NYU — Purple */
+/* NYU — Softer Purple */
 .tiles article.style2 > a::before,
 .tiles article.style2 > .image::before {
-  background: #57068c !important;
+  background: #7a4ea3 !important;
 }
 
 /* Callalily — Blue/Green */
 .tiles article.callalily > a::before,
 .tiles article.callalily > .image::before {
   background: #6ecfd1 !important;
+}
+
+/* UTMB — Muted UT Orange */
+.tiles article.style1 > a::before,
+.tiles article.style1 > .image::before {
+  background: #c46a2a !important; /* softened UT orange */
 }
