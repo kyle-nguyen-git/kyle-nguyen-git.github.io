@@ -125,12 +125,11 @@ input[type="submit"].primary {
   margin-bottom: 4rem;
 }
 
-/* NYU – Purple tile */
-.tiles article.style2::before {
-  background-color: #57068c; /* NYU purple */
+/* FORCE tile accent colors */
+.tiles article.style2:before {
+  background: #57068c !important; /* NYU purple */
 }
 
-/* Callalily – light blue / green */
-.tiles article.callalily::before {
-  background-color: #6ecfd1; /* blue-green */
+.tiles article.callalily:before {
+  background: #6ecfd1 !important; /* blue-green */
 }
