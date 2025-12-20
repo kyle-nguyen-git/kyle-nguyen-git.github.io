@@ -135,18 +135,16 @@ a:hover { color: var(--text-main) !important; }
 
 /* =========================
    REMOVE Phantom diagonal “X”
-   Keep overlays, just remove diagonal pattern
+   (keep the overlay layers so hover still works)
    ========================= */
 
-/* Kill the diagonal layer that Phantom draws */
+/* Keep ::after alive (Phantom uses this for hover feel), just remove the diagonal graphic */
 .tiles article > a::after {
-  display: none !important;
-  opacity: 0 !important;
-  background: none !important;
+  display: block !important;
   background-image: none !important;
 }
 
-/* If Phantom bakes diagonal stripes into background-image on ::before, strip ONLY the image */
+/* Also strip any diagonal background images from other layers */
 .tiles article > a::before,
 .tiles article > .image::before,
 .tiles article > .image::after,
@@ -154,34 +152,32 @@ a:hover { color: var(--text-main) !important; }
 .tiles article::after {
   background-image: none !important;
 }
-
 /* =========================
    Overlays
    (Alternate 3 colors across tiles in EACH tiles section)
    ========================= */
 
-/* Keep overlay visible */
+/* Base overlay strength */
 .tiles article > a::before,
 .tiles article > .image::before {
-  opacity: 0.86 !important; /* base overlay strength */
+  opacity: 0.82 !important;
 }
 
-/* Alternate overlay colors */
-.tiles article:nth-child(3n + 1) > a::before,
-.tiles article:nth-child(3n + 1) > .image::before {
-  background: var(--tile-a) !important;
+/* On hover: reduce overlay so image becomes clearer */
+.tiles article:hover > a::before,
+.tiles article:hover > .image::before {
+  opacity: 0.62 !important;   /* try 0.55–0.70 */
 }
 
-.tiles article:nth-child(3n + 2) > a::before,
-.tiles article:nth-child(3n + 2) > .image::before {
-  background: var(--tile-b) !important;
+/* Make the image pop a bit on hover */
+.tiles article:hover > .image img {
+  filter: brightness(1.06) contrast(1.04) !important;
 }
 
-.tiles article:nth-child(3n) > a::before,
-.tiles article:nth-child(3n) > .image::before {
-  background: var(--tile-c) !important;
+/* Optional: remove your extra box-shadow film completely */
+.tiles article:hover > .image {
+  box-shadow: none !important;
 }
-
 /* =========================
    Hover behavior (FIXED selectors)
    ========================= */
