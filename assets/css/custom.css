@@ -19,7 +19,7 @@
   --tile-c: #DE1A58;
 
   /* Hover film (darken image on hover for readability) */
-  --hover-film: rgba(0, 0, 0, 0.40);
+  --hover-film: rgba(0, 0, 0, 0.16);
 }
 
 /* =========================
@@ -194,7 +194,7 @@ a:hover { color: var(--text-main) !important; }
 
 /* Dim image a bit on hover */
 .tiles article > a:hover .image img {
-  filter: brightness(0.89) contrast(1.05);
+  filter: brightness(0.98) contrast(1.02);
 }
 
 /* Extra film layer */
