@@ -86,10 +86,18 @@ input[type="submit"].primary {
   margin-top: 5rem;
 }
 
-/* Remove Phantom diagonal overlay on tiles */
-.tiles article > a::before,
+/* Remove the Phantom "X" graphic, but KEEP the color overlay */
 .tiles article > a::after {
   display: none !important;
+}
+
+/* Custom tile colors */
+.tiles article.style2 > a::before {
+  background: #57068c !important; /* NYU purple */
+}
+
+.tiles article.callalily > a::before {
+  background: #6ecfd1 !important; /* Callalily blue-green */
 }
 /* Fix tile image cropping */
 .tiles article .image {
@@ -123,13 +131,4 @@ input[type="submit"].primary {
 /* Add spacing before footer */
 .tiles:last-of-type {
   margin-bottom: 4rem;
-}
-
-/* Force tile accent colors (Phantom uses the <a>:before overlay) */
-.tiles article.style2 > a:before {
-  background: #57068c !important; /* NYU purple */
-}
-
-.tiles article.callalily > a:before {
-  background: #6ecfd1 !important; /* Callalily blue-green */
 }
