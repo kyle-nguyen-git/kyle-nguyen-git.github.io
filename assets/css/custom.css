@@ -87,4 +87,16 @@ input[type="submit"].primary {
 .tiles article > a::after {
   display: none !important;
 }
+/* Fix tile image cropping */
+.tiles article .image {
+  height: 220px;            /* controls tile image height */
+  overflow: hidden;
+}
+
+.tiles article .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* key line */
+  object-position: center;  /* default center crop */
+}
 
