@@ -37,9 +37,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
-p, li {
-  color: var(--text-muted);
-}
+p, li { color: var(--text-muted); }
 
 a { color: var(--text-main); }
 a:hover { color: var(--text-main) !important; }
@@ -74,7 +72,7 @@ a:hover { color: var(--text-main) !important; }
   line-height: 1.5;
 }
 
-/* Make hover blurbs the darker gold (not white) */
+/* Hover blurbs the darker gold */
 .tiles article .content p {
   color: var(--text-muted) !important;
 }
@@ -92,55 +90,55 @@ a:hover { color: var(--text-main) !important; }
   object-position: center;
 }
 
-/* Remove Phantom diagonal “X” ONLY (do NOT touch ::before) */
+/* =========================
+   Remove Phantom diagonal “X”
+   (kill the diagonal layer without touching overlay)
+   ========================= */
+
+/* The X is usually the ::after layer */
 .tiles article > a::after {
   display: none !important;
+  opacity: 0 !important;
+  background: none !important;
+  background-image: none !important;
+}
+
+/* Some Phantom builds also sneak diagonal gradients into ::before */
+.tiles article > a::before {
+  background-image: none !important;  /* keep color, remove diagonal/gradient */
 }
 
 /* =========================
-   Overlays
-   (Alternate 3 colors across tiles in EACH tiles section)
+   Overlays (alternate 3 colors per .tiles section)
    ========================= */
 
-/* Make sure overlay exists + is visible */
-.tiles article > a::before,
-.tiles article > .image::before {
+/* Ensure overlay exists + visible */
+.tiles article > a::before {
   opacity: 0.86 !important; /* base overlay strength */
 }
 
-/* Alternate overlay colors */
-.tiles article:nth-child(3n + 1) > a::before,
-.tiles article:nth-child(3n + 1) > .image::before {
-  background: var(--tile-a) !important;
-}
-
-.tiles article:nth-child(3n + 2) > a::before,
-.tiles article:nth-child(3n + 2) > .image::before {
-  background: var(--tile-b) !important;
-}
-
-.tiles article:nth-child(3n) > a::before,
-.tiles article:nth-child(3n) > .image::before {
-  background: var(--tile-c) !important;
-}
+/* Alternate overlay colors (ONLY on a::before — that’s Phantom’s overlay) */
+.tiles article:nth-child(3n + 1) > a::before { background-color: var(--tile-a) !important; }
+.tiles article:nth-child(3n + 2) > a::before { background-color: var(--tile-b) !important; }
+.tiles article:nth-child(3n)     > a::before { background-color: var(--tile-c) !important; }
 
 /* =========================
    Hover behavior (Phantom-like)
+   IMPORTANT: use article:hover (image is sibling of <a>)
    ========================= */
 
-/* Keep overlay, but darken film so white/gold text is readable */
-.tiles article > a:hover::before,
-.tiles article > a:hover .image::before {
+/* Keep overlay on hover (don’t go fully clear) */
+.tiles article:hover > a::before {
   opacity: 0.92 !important;
 }
 
-/* Add a dark film + slightly dim the image on hover (like original Phantom) */
-.tiles article > a:hover .image img {
+/* Dim the image a bit on hover like HTML5UP */
+.tiles article:hover .image img {
   filter: brightness(0.78) contrast(1.05);
 }
 
-/* Extra film layer using box-shadow trick on the image container */
-.tiles article > a:hover .image {
+/* Add a dark film on hover for readability */
+.tiles article:hover .image {
   box-shadow: inset 0 0 0 9999px var(--hover-film);
 }
 
@@ -163,13 +161,8 @@ a:hover { color: var(--text-main) !important; }
 }
 
 /* Extra spacing between sections */
-.tiles + .section-header {
-  margin-top: 5rem;
-}
-
-.tiles:last-of-type {
-  margin-bottom: 4rem;
-}
+.tiles + .section-header { margin-top: 5rem; }
+.tiles:last-of-type { margin-bottom: 4rem; }
 
 /* =========================
    Footer
