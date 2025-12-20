@@ -233,38 +233,49 @@ a:hover { color: var(--text-main) !important; }
 }
 
 /* =========================
-   FIX: Center tile text again
+   FORCE tile text to be perfectly centered
    ========================= */
 
-/* Keep Phantom's centered layout for tile content */
+.tiles article {
+  position: relative; /* allows the link to overlay the whole tile */
+}
+
+/* Make the clickable area fill the tile and center its contents */
 .tiles article > a {
-  position: relative; /* anchor content positioning */
-}
-
-.tiles article > a .content {
   position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  transform: translateY(-50%);
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* vertical centering */
+  align-items: center;      /* horizontal centering */
   text-align: center;
-  padding: 0 1.5rem;
+  padding: 2rem 1.75rem;
 }
 
-/* Optional: keep description from feeling too wide */
+/* Remove any “top/bottom anchored” content styling from Phantom */
+.tiles article > a .content {
+  position: static !important;
+  transform: none !important;
+  width: 100%;
+  margin-top: 0.65rem;
+  padding: 0 !important;
+}
+
+/* Tidy spacing */
+.tiles article > a h2 {
+  margin: 0;
+}
 .tiles article > a .content p {
-  max-width: 26rem;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0;
+  max-width: 28rem;
 }
 
 /* =========================
    Bigger titles for Projects & Ventures only
-   (second tiles section on the page)
+   (2nd tiles section)
    ========================= */
 
-/* Targets the SECOND .tiles block (Projects & Ventures) */
-.tiles:nth-of-type(2) article h2 {
+.tiles:nth-of-type(2) article > a h2 {
   font-size: 1.18rem !important;
   line-height: 1.25;
 }
