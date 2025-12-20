@@ -1,8 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-  Phantom by HTML5 UP
-  html5up.net | @ajlkn
--->
 <html>
   <head>
     <title>UTMB Research — Kyle Nguyen</title>
@@ -16,9 +12,12 @@
   <body class="is-preload">
     <div id="wrapper">
 
-      <!-- Header -->
+      <!-- Header (match NYU page) -->
       <header id="header">
         <div class="inner">
+          <a href="index.html" class="logo">
+            <span class="title">Kyle Nguyen</span>
+          </a>
           <nav>
             <ul>
               <li><a href="#menu">Menu</a></li>
@@ -27,12 +26,12 @@
         </div>
       </header>
 
-      <!-- Menu -->
+      <!-- Menu (match NYU styling/structure) -->
       <nav id="menu">
         <h2>Menu</h2>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="nyu.html">NYU Research</a></li>
+          <li><a href="nyu-research.html">NYU Research</a></li>
           <li><a href="utmb.html">UTMB Research</a></li>
         </ul>
       </nav>
@@ -41,68 +40,72 @@
       <div id="main">
         <div class="inner">
 
-          <header class="intro">
-            <h1>UTMB Research</h1>
+          <!-- Major header (match NYU page) -->
+          <header class="major">
+            <h1>Differential Gene Expression in Virus-Infected Exosomes</h1>
+            <p>UTMB (2024)</p>
           </header>
 
-          <!-- Top summary (no border, like NYU) -->
-          <section>
-            <p>
-              During my time at UTMB, I worked in a translational research setting using computational analysis to study
-              how viral infection can shift molecular signals carried in exosomes. My work focused on organizing and
-              analyzing biological datasets, validating patterns in expression changes, and communicating results through
-              figures and presentations.
-            </p>
-          </section>
+          <!-- Top overview (NO box, match NYU) -->
+          <p style="max-width: 60rem;">
+            During my time at UTMB, I worked in a translational research setting using computational analysis to study
+            how viral infection can shift molecular signals carried in exosomes. My work focused on organizing and
+            analyzing biological datasets, validating patterns in expression changes, and communicating results through
+            figures and presentations.
+          </p>
 
-          <!-- Poster (bordered section) -->
-          <section class="box">
+          <!-- Poster (match NYU: section + image links to PDF + single link) -->
+          <section>
             <h2>Poster</h2>
 
-            <span class="image fit">
-              <img src="images/UTMBSIBDS.png" alt="UTMB poster preview" />
-            </span>
+            <!-- PNG display, links to PDF -->
+            <a href="images/UTMBSIBDS.pdf" target="_blank" rel="noopener">
+              <span class="image fit">
+                <img src="images/UTMBSIBDS.png" alt="UTMB research poster" />
+              </span>
+            </a>
 
+            <!-- single PDF link -->
             <p style="margin-top: 0.75rem;">
-              <a href="images/UTMBSIBDS.pdf" target="_blank" rel="noopener">Open poster PDF</a>
+              <a href="images/UTMBSIBDS.pdf" target="_blank" rel="noopener">Download poster (PDF)</a>
             </p>
           </section>
 
-          <!-- Introduction / Abstract (bordered section) -->
-          <section class="box">
+          <!-- Introduction (match NYU: section + inner .box) -->
+          <section>
             <h2>Introduction</h2>
-
-            <p>
-              Respiratory syncytial virus (RSV) and Human metapneumovirus (HMPV) are two of the leading causes of
-              respiratory tract infections in young children and other immunocompromised patients. RSV is most likely
-              to cause severe illness in infants younger than 6 months while HMPV causes severe illness between 6 and
-              12 months. MicroRNA (miRNA) and Piwi-interacting RNA (piRNA) are two types of non-coding RNA (RNA that is
-              not translated into protein) that regulate gene expression. Exosomes are vesicles that carry biologically
-              active proteins, lipids, and RNAs from one cell to another. Exosomes from infected cells have been shown to
-              shelter and deliver viral RNA and proteins, viral and cellular miRNA, and other genetic elements to other
-              cells. Exosomes play a role in both limiting and spreading infections depending on the type of virus. They
-              can be used in creating antiviral treatments and vaccines. We aim to investigate the differential expression
-              of genes that code for miRNAs and piRNAs between exosomes that originate from RSV infected cells, HMPV
-              infected cells, or non-infected cells.
-            </p>
+            <div class="box">
+              <p>
+                Respiratory syncytial virus (RSV) and Human metapneumovirus (HMPV) are two of the leading causes of respiratory tract infections
+                in young children and other immunocompromised patients. RSV is most likely to cause severe illness in infants younger than 6 months
+                while HMPV causes severe illness between 6 and 12 months. MicroRNA (miRNA) and Piwi-interacting RNA (piRNA) are two types of
+                non-coding RNA (RNA that is not translated into protein) that regulate gene expression. Exosomes are vesicles that carry biologically
+                active proteins, lipids, and RNAs from one cell to another. Exosomes from infected cells have been shown to shelter and deliver viral
+                RNA and proteins, viral and cellular miRNA, and other genetic elements to other cells. Exosomes play a role in both limiting and spreading
+                infections depending on the type of virus. They can be used in creating antiviral treatments and vaccines. We aim to investigate the
+                differential expression of genes that code for miRNAs and piRNAs between exosomes that originate from RSV infected cells, HMPV infected
+                cells, or non-infected cells.
+              </p>
+            </div>
           </section>
 
-          <!-- Tools & Methods (bordered section) -->
+          <!-- Tools & Methods (match NYU: boxed section) -->
           <section class="box">
             <h2>Tools &amp; Methods</h2>
             <ul>
-              <li><strong>Data analysis:</strong> differential expression comparisons across RSV, HMPV, and non-infected conditions</li>
-              <li><strong>Programming:</strong> structured data processing in R or Python (cleaning, filtering, merging, summary tables)</li>
+              <li><strong>Analysis:</strong> differential expression comparisons across RSV, HMPV, and non-infected conditions</li>
+              <li><strong>Programming:</strong> structured data processing in R and/or Python (cleaning, filtering, merges, summary tables)</li>
+              <li><strong>Data handling:</strong> reproducible outputs (CSV/TSV), consistent naming, traceable comparisons across conditions</li>
               <li><strong>Visualization:</strong> figure generation for presentations (expression summaries, comparison plots)</li>
-              <li><strong>Workflow:</strong> organizing datasets and outputs for reproducibility (consistent file naming, traceable results)</li>
-              <li><strong>Communication:</strong> translating results into poster-ready figures and concise written summaries</li>
+              <li><strong>Workflow:</strong> translating biological questions into computable comparisons; iterative refinement with mentor feedback</li>
             </ul>
           </section>
 
-          <!-- Contact (NO border, like NYU) -->
+          <!-- Contact (match NYU: its own section, NOT boxed) -->
           <section>
-            <p style="margin-top: 1.5rem;">
-              If you have questions about this project, feel free to reach out to me at
+            <h2>Contact</h2>
+            <p>
+              If you have questions about this project, feel free to reach out to me here:
               <a href="mailto:ktnuyen04@gmail.com">ktnuyen04@gmail.com</a>.
             </p>
           </section>
@@ -110,7 +113,7 @@
         </div>
       </div>
 
-      <!-- Footer -->
+      <!-- Footer (match NYU: icons + copyright) -->
       <footer id="footer">
         <div class="inner">
           <ul class="icons">
