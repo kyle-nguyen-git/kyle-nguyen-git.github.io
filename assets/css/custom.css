@@ -125,11 +125,11 @@ input[type="submit"].primary {
   margin-bottom: 4rem;
 }
 
-/* FORCE tile accent colors */
-.tiles article.style2:before {
+/* Force tile accent colors (Phantom uses the <a>:before overlay) */
+.tiles article.style2 > a:before {
   background: #57068c !important; /* NYU purple */
 }
 
-.tiles article.callalily:before {
-  background: #6ecfd1 !important; /* blue-green */
+.tiles article.callalily > a:before {
+  background: #6ecfd1 !important; /* Callalily blue-green */
 }
