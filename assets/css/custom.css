@@ -100,3 +100,18 @@ input[type="submit"].primary {
   object-position: center;  /* default center crop */
 }
 
+/* Slightly smaller text inside tiles */
+.tiles article h2 {
+  font-size: 1.05rem;   /* was larger */
+  line-height: 1.3;
+}
+
+.tiles article p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Improve contrast for tile descriptions */
+.tiles article .content p {
+  color: #d1d5db;  /* light cool gray, higher contrast */
+}
