@@ -94,10 +94,10 @@ a:hover { color: var(--accent) !important; }
    Hover behavior (IMPORTANT)
    ========================= */
 
-/* Keep overlay visible on hover (not fully transparent) */
+/* Hover overlay: keep dark enough for readable text */
 .tiles article > a:hover::before,
 .tiles article > a:hover .image::before {
-  opacity: 0.75 !important;  /* <-- key change */
+  opacity: 0.85 !important;
 }
 
 /* =========================
@@ -183,13 +183,11 @@ a:hover { color: var(--accent) !important; }
 }
 
 /* =========================
-   REMOVE Phantom diagonal "X" completely
+   REMOVE Phantom diagonal "X" ONLY (keep color overlay)
    ========================= */
 
-/* Kill BOTH diagonal lines */
-.tiles article > a::before,
+/* Remove the diagonal lines */
 .tiles article > a::after,
-.tiles article > .image::before,
 .tiles article > .image::after {
   content: none !important;
   display: none !important;
