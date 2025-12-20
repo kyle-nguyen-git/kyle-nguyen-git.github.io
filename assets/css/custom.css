@@ -1,5 +1,5 @@
 /* =========================
-   Kyle — Dark Theme
+   Kyle — Dark Theme (Refined)
    ========================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
@@ -11,9 +11,9 @@
   --text-muted: #b3b3b3;
   --accent: #6366f1;
 
-  /* Unified tile palette (ONLY 2 colors) */
-  --tile-research: #4f5d73;   /* calm slate blue */
-  --tile-projects: #5f8f8b;   /* muted teal */
+  /* Unified overlay palette (darker for contrast) */
+  --tile-research: #3f4b5f;  /* dark slate-indigo */
+  --tile-projects: #3f6f6b;  /* dark muted teal */
 }
 
 /* =========================
@@ -67,6 +67,7 @@ a:hover { color: var(--accent) !important; }
   line-height: 1.5;
 }
 
+/* White text on hover overlay */
 .tiles article .content p {
   color: #ffffff;
 }
@@ -82,31 +83,21 @@ a:hover { color: var(--accent) !important; }
   height: 100%;
   object-fit: cover;
   object-position: center;
-  transition: transform 0.35s ease;
 }
 
-/* Remove Phantom diagonal “X” ONLY */
+/* Remove Phantom diagonal “X” */
 .tiles article > a::after {
   display: none !important;
 }
 
 /* =========================
-   Hover behavior (RESTORED)
+   Hover behavior (IMPORTANT)
    ========================= */
 
-.tiles article > a::before,
-.tiles article > .image::before {
-  opacity: 0.82 !important;          /* normal state */
-  transition: opacity 0.25s ease;
-}
-
-.tiles article:hover > a::before,
-.tiles article:hover > .image::before {
-  opacity: 0.12 !important;          /* hover = image clear */
-}
-
-.tiles article:hover .image img {
-  transform: scale(1.02);
+/* Keep overlay visible on hover (not fully transparent) */
+.tiles article > a:hover::before,
+.tiles article > a:hover .image::before {
+  opacity: 0.75 !important;  /* <-- key change */
 }
 
 /* =========================
@@ -152,11 +143,10 @@ a:hover { color: var(--accent) !important; }
 }
 
 /* =========================
-   TILE COLOR ASSIGNMENTS
-   (NO brand colors, NO one-offs)
+   Tile Color Mapping
    ========================= */
 
-/* Research tiles */
+/* Research (NYU + UTMB) */
 .tiles article.style1 > a::before,
 .tiles article.style1 > .image::before,
 .tiles article.style2 > a::before,
@@ -164,7 +154,7 @@ a:hover { color: var(--accent) !important; }
   background: var(--tile-research) !important;
 }
 
-/* Project & venture tiles */
+/* Projects & Ventures */
 .tiles article.style3 > a::before,
 .tiles article.style3 > .image::before,
 .tiles article.style4 > a::before,
