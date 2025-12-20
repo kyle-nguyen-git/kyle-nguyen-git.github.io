@@ -37,9 +37,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
-p, li {
-  color: var(--text-muted);
-}
+p, li { color: var(--text-muted); }
 
 a { color: var(--text-main); }
 a:hover { color: var(--text-main) !important; }
@@ -60,11 +58,10 @@ a:hover { color: var(--text-main) !important; }
   background: var(--bg-secondary) !important;
   border-radius: 18px;
 
-  /* IMPORTANT: allow the tile to visually grow on hover */
+  /* allow tile to visually grow on hover */
   overflow: visible;
 
-  /* Smooth hover animation */
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.25s ease;
   transform: translateZ(0);
 }
 
@@ -74,11 +71,35 @@ a:hover { color: var(--text-main) !important; }
   z-index: 2;
 }
 
-/* Keep the clickable area aligned with the rounded corners */
+/* Keep overlay + image clipped to rounded corners */
 .tiles article > a {
   border-radius: 18px;
-  overflow: hidden; /* this keeps the overlay + image nicely clipped to rounded corners */
-  display: block;
+  overflow: hidden;
+}
+
+/* ---- Center ALL tile text (title + hover blurb) ----
+   IMPORTANT: We do NOT change position/inset. We only use flex on the link
+   so we don't break Phantom's overlay/hover structure.
+*/
+.tiles article > a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* vertical center */
+  align-items: center;      /* horizontal center */
+  text-align: center;
+}
+
+/* Neutralize Phantom's "content anchored at bottom" so it's centered */
+.tiles article > a .content {
+  position: static !important;
+  transform: none !important;
+  margin: 0.65rem 0 0 0;
+  padding: 0 !important;
+  width: 100%;
+}
+
+.tiles article > a h2 {
+  margin: 0;
 }
 
 /* Title + hover blurb typography */
@@ -93,12 +114,13 @@ a:hover { color: var(--text-main) !important; }
   line-height: 1.5;
 }
 
-/* Make hover blurbs the darker gold (not white) */
+/* Hover blurbs = darker gold */
 .tiles article .content p {
   color: var(--text-muted) !important;
+  margin: 0;
 }
 
-/* Image cropping (crop inside the link so the rounded corners still work) */
+/* Image cropping */
 .tiles article .image {
   height: 220px;
   overflow: hidden;
@@ -113,10 +135,10 @@ a:hover { color: var(--text-main) !important; }
 
 /* =========================
    REMOVE Phantom diagonal “X”
-   Keep overlays, just remove the diagonal pattern
+   Keep overlays, just remove diagonal pattern
    ========================= */
 
-/* Hide the common diagonal layer */
+/* Kill the diagonal layer that Phantom draws */
 .tiles article > a::after {
   display: none !important;
   opacity: 0 !important;
@@ -124,18 +146,10 @@ a:hover { color: var(--text-main) !important; }
   background-image: none !important;
 }
 
-/* If the diagonal is baked into ::before as a background-image, strip it */
-.tiles article > a::before {
-  background-image: none !important;
-}
-
-/* Some Phantom builds also apply patterns to the image pseudo layers */
+/* If Phantom bakes diagonal stripes into background-image on ::before, strip ONLY the image */
+.tiles article > a::before,
 .tiles article > .image::before,
-.tiles article > .image::after {
-  background-image: none !important;
-}
-
-/* Extra safety: if any pattern sits on the article itself */
+.tiles article > .image::after,
 .tiles article::before,
 .tiles article::after {
   background-image: none !important;
@@ -146,7 +160,7 @@ a:hover { color: var(--text-main) !important; }
    (Alternate 3 colors across tiles in EACH tiles section)
    ========================= */
 
-/* Make sure overlay exists + is visible */
+/* Keep overlay visible */
 .tiles article > a::before,
 .tiles article > .image::before {
   opacity: 0.86 !important; /* base overlay strength */
@@ -172,20 +186,32 @@ a:hover { color: var(--text-main) !important; }
    Hover behavior (Phantom-like)
    ========================= */
 
-/* Keep overlay, but darken film so white/gold text is readable */
+/* Keep overlay but darken slightly */
 .tiles article > a:hover::before,
 .tiles article > a:hover .image::before {
   opacity: 0.92 !important;
 }
 
-/* Add a dark film + slightly dim the image on hover (like original Phantom) */
+/* Dim image a bit on hover */
 .tiles article > a:hover .image img {
   filter: brightness(0.89) contrast(1.05);
 }
 
-/* Extra film layer using box-shadow trick on the image container */
+/* Extra film layer */
 .tiles article > a:hover .image {
   box-shadow: inset 0 0 0 9999px var(--hover-film);
+}
+
+/* =========================
+   Projects titles slightly larger than Research
+   (Targets the SECOND tiles section in your layout)
+   ========================= */
+
+/* In your HTML: Research tiles come first, then a section-header, then Projects tiles.
+   This selector targets the Projects tiles section specifically. */
+.tiles + .section-header + .tiles article h2 {
+  font-size: 1.18rem !important;
+  line-height: 1.25;
 }
 
 /* =========================
@@ -230,52 +256,4 @@ a:hover { color: var(--text-main) !important; }
 #footer li,
 #footer a {
   color: var(--text-muted);
-}
-
-/* =========================
-   FORCE tile text to be perfectly centered
-   ========================= */
-
-.tiles article {
-  position: relative; /* allows the link to overlay the whole tile */
-}
-
-/* Make the clickable area fill the tile and center its contents */
-.tiles article > a {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;  /* vertical centering */
-  align-items: center;      /* horizontal centering */
-  text-align: center;
-  padding: 2rem 1.75rem;
-}
-
-/* Remove any “top/bottom anchored” content styling from Phantom */
-.tiles article > a .content {
-  position: static !important;
-  transform: none !important;
-  width: 100%;
-  margin-top: 0.65rem;
-  padding: 0 !important;
-}
-
-/* Tidy spacing */
-.tiles article > a h2 {
-  margin: 0;
-}
-.tiles article > a .content p {
-  margin: 0;
-  max-width: 28rem;
-}
-
-/* =========================
-   Bigger titles for Projects & Ventures only
-   (2nd tiles section)
-   ========================= */
-
-.tiles:nth-of-type(2) article > a h2 {
-  font-size: 1.18rem !important;
-  line-height: 1.25;
 }
