@@ -16,6 +16,9 @@
   --tile-projects: #5f8f8b;   /* muted teal */
   --tile-neutral:  #6b6e70;   /* warm gray (optional) */
   --tile-featured: #7a6f9b;   /* soft highlight (optional) */
+
+  /* Subtle glow controls (optional) */
+  --glow-opacity: 0.14;
 }
 
 /* Global */
@@ -43,6 +46,32 @@ a:hover { color: var(--accent) !important; }
 #header,
 #header > .inner {
   background: transparent !important;
+}
+
+/* =========================
+   Optional subtle flowing glow
+   ========================= */
+body::before{
+  content:"";
+  position: fixed;
+  inset: -20%;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(650px 650px at 20% 25%, rgba(99,102,241,0.25), transparent 60%),
+    radial-gradient(700px 700px at 75% 30%, rgba(95,143,139,0.22), transparent 62%),
+    radial-gradient(650px 650px at 65% 80%, rgba(79,93,115,0.22), transparent 60%),
+    radial-gradient(700px 700px at 30% 85%, rgba(122,111,155,0.18), transparent 62%);
+  filter: blur(70px);
+  opacity: var(--glow-opacity);
+  transform: translate3d(0,0,0);
+  animation: kyleGlowFloat 14s ease-in-out infinite alternate;
+}
+
+@keyframes kyleGlowFloat{
+  0%   { transform: translate(-2%, -1%) scale(1.02); }
+  50%  { transform: translate(2%,  1%) scale(1.06); }
+  100% { transform: translate(-1%, 2%) scale(1.03); }
 }
 
 /* =========================
@@ -84,7 +113,7 @@ a:hover { color: var(--accent) !important; }
   object-position: center;
 }
 
-/* Remove Phantom diagonal “X” graphic ONLY */
+/* Remove Phantom diagonal “X” graphic ONLY (keep overlay color) */
 .tiles article > a::after {
   display: none !important;
 }
@@ -137,6 +166,12 @@ a:hover { color: var(--accent) !important; }
    Palette-based, not brand-based
    ========================= */
 
+/* Ensure Phantom overlay exists + is visible */
+.tiles article > a::before,
+.tiles article > .image::before {
+  opacity: 0.92 !important;
+}
+
 /* Research tiles (NYU + UTMB) */
 .tiles article.style1 > a::before,
 .tiles article.style1 > .image::before,
@@ -163,7 +198,7 @@ a:hover { color: var(--accent) !important; }
   background: var(--tile-featured) !important;
 }
 
-/* Optional: a neutral variant if you want a calmer tile (class="neutral") */
+/* Optional: a neutral variant (class="neutral") */
 .tiles article.neutral > a::before,
 .tiles article.neutral > .image::before {
   background: var(--tile-neutral) !important;
