@@ -1,5 +1,5 @@
 /* =========================
-   Kyle — Custom Neon Palette
+   Kyle — Custom Neon Palette (FIXED)
    ========================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
@@ -19,7 +19,7 @@
   --tile-c: #DE1A58;
 
   /* Hover film (darken image on hover for readability) */
-  --hover-film: rgba(0, 0, 0, 0.39);
+  --hover-film: rgba(0, 0, 0, 0.36);
 }
 
 /* =========================
@@ -37,9 +37,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
-p, li {
-  color: var(--text-muted);
-}
+p, li { color: var(--text-muted); }
 
 a { color: var(--text-main); }
 a:hover { color: var(--text-main) !important; }
@@ -62,7 +60,6 @@ a:hover { color: var(--text-main) !important; }
   overflow: hidden;
 }
 
-/* Title + hover blurb typography */
 .tiles article h2 {
   color: var(--text-main) !important;
   font-size: 1.05rem;
@@ -74,7 +71,7 @@ a:hover { color: var(--text-main) !important; }
   line-height: 1.5;
 }
 
-/* Make hover blurbs the darker gold (not white) */
+/* hover blurbs */
 .tiles article .content p {
   color: var(--text-muted) !important;
 }
@@ -92,54 +89,81 @@ a:hover { color: var(--text-main) !important; }
   object-position: center;
 }
 
-/* Remove Phantom diagonal “X” ONLY (do NOT touch ::before) */
-.tiles article > a::after {
-  display: none !important;
-}
-
 /* =========================
-   Overlays
-   (Alternate 3 colors across tiles in EACH tiles section)
+   REMOVE Phantom diagonal “X”
+   (Phantom draws it using BOTH ::before and ::after)
    ========================= */
 
-/* Make sure overlay exists + is visible */
+/* Kill the diagonal line pseudo-elements regardless of where Phantom attaches them */
+.tiles article > a::after,
 .tiles article > a::before,
-.tiles article > .image::before {
-  opacity: 0.86 !important; /* base overlay strength */
+.tiles article .image::after,
+.tiles article .image::before {
+  /* do NOT remove overlays here; we re-add overlays below with higher specificity */
+  /* This block only targets the diagonal X – Phantom uses transforms/gradients on these. */
+  transform: none !important;
+  background-image: none !important;
+  box-shadow: none !important;
 }
 
-/* Alternate overlay colors */
-.tiles article:nth-child(3n + 1) > a::before,
-.tiles article:nth-child(3n + 1) > .image::before {
-  background: var(--tile-a) !important;
-}
-
-.tiles article:nth-child(3n + 2) > a::before,
-.tiles article:nth-child(3n + 2) > .image::before {
-  background: var(--tile-b) !important;
-}
-
-.tiles article:nth-child(3n) > a::before,
-.tiles article:nth-child(3n) > .image::before {
-  background: var(--tile-c) !important;
+/* Specifically hide the diagonal “X” line layer (usually ::after) */
+.tiles article > a::after,
+.tiles article .image::after {
+  display: none !important;
+  content: none !important;
 }
 
 /* =========================
-   Hover behavior (Phantom-like)
+   OVERLAYS (re-create clean overlay film)
    ========================= */
 
-/* Keep overlay, but darken film so white/gold text is readable */
-.tiles article > a:hover::before,
-.tiles article > a:hover .image::before {
-  opacity: 0.92 !important;
+/* Ensure overlay pseudo-element exists on the link */
+.tiles article > a {
+  position: relative;
 }
 
-/* Add a dark film + slightly dim the image on hover (like original Phantom) */
+/* Rebuild a clean overlay on the link (this replaces Phantom’s diagonal usage) */
+.tiles article > a::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0; left: 0; right: 0; bottom: 0;
+  opacity: 0.86;              /* base overlay strength */
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Make sure text/content sit above overlay */
+.tiles article > a > :not(.image) {
+  position: relative;
+  z-index: 2;
+}
+
+/* Make sure the image stays below overlay */
+.tiles article .image {
+  position: relative;
+  z-index: 0;
+}
+
+/* Alternate overlay colors within EACH .tiles section */
+.tiles article:nth-child(3n + 1) > a::before { background: var(--tile-a) !important; }
+.tiles article:nth-child(3n + 2) > a::before { background: var(--tile-b) !important; }
+.tiles article:nth-child(3n)     > a::before { background: var(--tile-c) !important; }
+
+/* =========================
+   Hover behavior (Phantom-like readability)
+   ========================= */
+
+/* Slightly stronger overlay on hover (still colored) */
+.tiles article > a:hover::before {
+  opacity: 0.90;
+}
+
+/* Dim image a bit on hover */
 .tiles article > a:hover .image img {
-  filter: brightness(0.78) contrast(1.05);
+  filter: brightness(0.82) contrast(1.05);
 }
 
-/* Extra film layer using box-shadow trick on the image container */
+/* Add subtle dark film so text is readable (but not “perfectly clear”) */
 .tiles article > a:hover .image {
   box-shadow: inset 0 0 0 9999px var(--hover-film);
 }
@@ -162,14 +186,8 @@ a:hover { color: var(--text-main) !important; }
   color: var(--text-main);
 }
 
-/* Extra spacing between sections */
-.tiles + .section-header {
-  margin-top: 5rem;
-}
-
-.tiles:last-of-type {
-  margin-bottom: 4rem;
-}
+.tiles + .section-header { margin-top: 5rem; }
+.tiles:last-of-type { margin-bottom: 4rem; }
 
 /* =========================
    Footer
