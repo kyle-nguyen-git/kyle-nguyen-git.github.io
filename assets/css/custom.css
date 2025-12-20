@@ -48,8 +48,12 @@ a:hover { color: var(--accent) !important; }
 .tiles article p { color: var(--text-muted); }
 
 #footer {
-  background: #0d0d0d !important;
+  background: transparent !important; /* removes dark box */
+  border-top: 1px solid rgba(255, 255, 255, 0.08); /* subtle divider */
+  margin-top: 4rem;  /* space between last project and footer */
+  padding-top: 2rem;
 }
+
 #footer h2 { color: var(--text-main); }
 #footer p, #footer li, #footer a { color: var(--text-muted); }
 
@@ -114,5 +118,10 @@ input[type="submit"].primary {
 /* Make tile descriptions white for maximum contrast */
 .tiles article .content p {
   color: #ffffff;
+}
+
+/* Add spacing before footer */
+.tiles:last-of-type {
+  margin-bottom: 4rem;
 }
 
