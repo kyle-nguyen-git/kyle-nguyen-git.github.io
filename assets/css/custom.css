@@ -59,7 +59,26 @@ a:hover { color: var(--text-main) !important; }
 .tiles article {
   background: var(--bg-secondary) !important;
   border-radius: 18px;
-  overflow: hidden;
+
+  /* IMPORTANT: allow the tile to visually grow on hover */
+  overflow: visible;
+
+  /* Smooth hover animation */
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transform: translateZ(0);
+}
+
+/* Grow the whole tile (Phantom-style) */
+.tiles article:hover {
+  transform: scale(1.04);
+  z-index: 2;
+}
+
+/* Keep the clickable area aligned with the rounded corners */
+.tiles article > a {
+  border-radius: 18px;
+  overflow: hidden; /* this keeps the overlay + image nicely clipped to rounded corners */
+  display: block;
 }
 
 /* Title + hover blurb typography */
@@ -79,7 +98,7 @@ a:hover { color: var(--text-main) !important; }
   color: var(--text-muted) !important;
 }
 
-/* Image cropping */
+/* Image cropping (crop inside the link so the rounded corners still work) */
 .tiles article .image {
   height: 220px;
   overflow: hidden;
