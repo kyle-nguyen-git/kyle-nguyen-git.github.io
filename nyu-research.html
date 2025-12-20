@@ -1,8 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-  Phantom by HTML5 UP
-  html5up.net | @ajlkn
--->
 <html>
   <head>
     <title>NYU Research — Kyle Nguyen</title>
@@ -16,13 +12,11 @@
   <body class="is-preload">
     <div id="wrapper">
 
-      <!-- Header -->
       <header id="header">
         <div class="inner">
           <a href="index.html" class="logo">
             <span class="title">Kyle Nguyen</span>
           </a>
-
           <nav>
             <ul>
               <li><a href="#menu">Menu</a></li>
@@ -31,7 +25,6 @@
         </div>
       </header>
 
-      <!-- Menu -->
       <nav id="menu">
         <h2>Menu</h2>
         <ul>
@@ -40,52 +33,41 @@
         </ul>
       </nav>
 
-      <!-- Main -->
       <div id="main">
         <div class="inner">
 
-          <!-- Title -->
           <header class="major">
             <h1>Computational Pipeline for Cancer Neoantigen Discovery</h1>
             <p>NYU Grossman School of Medicine (2025)</p>
           </header>
 
-          <!-- Overview (no "Overview" label) -->
-          <div class="box">
-            <p style="margin-bottom: 0;">
-              During my summer at NYU Grossman, I worked on a computational pipeline focused on identifying cancer-relevant neoantigen
-              candidates from mutation-driven peptide changes. My work emphasized building reproducible data processing steps, generating
-              peptide libraries, and preparing outputs for downstream immunology-focused filtering and prioritization.
-            </p>
-          </div>
+          <!-- Top overview (no box) -->
+          <p style="max-width: 60rem;">
+            During my summer at NYU Grossman, I worked on a computational pipeline focused on identifying cancer-relevant neoantigen
+            candidates from mutation-driven peptide changes. My work emphasized building reproducible data processing steps, generating
+            peptide libraries, and preparing outputs for downstream immunology-focused filtering and prioritization.
+          </p>
 
           <!-- Poster -->
           <section>
             <h2>Poster</h2>
-            <p>
-              <a href="images/nyu-poster.pdf" target="_blank" rel="noopener">View / download poster (PDF)</a>
-            </p>
 
-            <!-- Inline embed (works great on desktop; some mobile browsers may fall back to opening the PDF) -->
-            <div class="box" style="padding: 0; overflow: hidden;">
-              <embed
-                src="images/nyu-poster.pdf"
-                type="application/pdf"
-                width="100%"
-                height="900px"
-              />
-            </div>
+            <!-- PNG display, links to PDF -->
+            <a href="images/nyu-poster.pdf" target="_blank" rel="noopener">
+              <span class="image fit">
+                <img src="images/nyu-poster-1.png" alt="NYU research poster" />
+              </span>
+            </a>
 
-            <!-- Fallback if embed doesn’t render -->
-            <p style="margin-top: 1rem;">
-              If the PDF doesn’t display above, use the link: <a href="images/nyu-poster.pdf" target="_blank" rel="noopener">nyu-poster.pdf</a>.
+            <!-- single PDF link -->
+            <p style="margin-top: 0.75rem;">
+              <a href="images/nyu-poster.pdf" target="_blank" rel="noopener">Download poster (PDF)</a>
             </p>
           </section>
 
           <!-- Abstract -->
           <section>
             <h2>Abstract</h2>
-
             <div class="box">
               <p>
                 Neoantigens—peptides uniquely presented on tumor cells—are emerging as targets for next-generation immunotherapies,
@@ -109,17 +91,21 @@
             </div>
           </section>
 
-          <!-- Everything else -->
+          <!-- Tools -->
           <section>
-            <h2>Project Focus</h2>
+            <h2>Tools &amp; Methods</h2>
             <ul>
-              <li>Simulate APOBEC3A-like mutation patterns across coding transcripts</li>
-              <li>Generate candidate 9-mer mutant peptides</li>
-              <li>Prioritize candidates using immunopeptidomics evidence, essentiality, and predicted HLA binding/stability</li>
-              <li>Begin extending the approach to transposable elements as an additional neoantigen source</li>
+              <li>APOBEC-style mutation simulation across coding transcripts</li>
+              <li>Mutant 9-mer peptide generation and library construction</li>
+              <li>Immunopeptidomics detection using <strong>TesorAI</strong></li>
+              <li>Gene essentiality prioritization using <strong>DepMap CERES</strong></li>
+              <li>HLA binding prediction using <strong>NetMHCpan 4.1</strong></li>
+              <li>Peptide stability filtering using <strong>NetMHCStabPan</strong></li>
+              <li>Early extension to <strong>transposable elements (TEs)</strong></li>
             </ul>
           </section>
 
+          <!-- Contact -->
           <section>
             <h2>Contact</h2>
             <p>
@@ -131,7 +117,6 @@
         </div>
       </div>
 
-      <!-- Footer -->
       <footer id="footer">
         <div class="inner">
           <ul class="icons">
@@ -160,7 +145,6 @@
 
     </div>
 
-    <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
     <script src="assets/js/breakpoints.min.js"></script>
