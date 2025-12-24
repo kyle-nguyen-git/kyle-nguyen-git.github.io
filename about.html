@@ -1,28 +1,158 @@
-<style>
-  /* About layout */
-  .about-grid { align-items: flex-start; }
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>About — Kyle Nguyen</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/custom.css?v=11" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-  /* Bigger headshot */
-  .headshot-wrap {
-    border-radius: 18px;
-    overflow: hidden;
-    max-width: 420px;   /* makes it feel bigger */
-  }
-  .headshot-wrap img {
-    width: 100%;
-    height: 540px;      /* makes it taller + more “present” */
-    object-fit: cover;
-    object-position: 50% 18%;
-    transform: scale(1.18); /* slightly zoomed */
-    display: block;
-  }
+    <!-- Page-only styling (kept in about.html, not custom.css) -->
+    <style>
+      /* 2-column layout on desktop, stacked on mobile */
+      .about-grid { align-items: flex-start; }
 
-  /* Mobile: center + shrink */
-  @media screen and (max-width: 736px) {
-    .headshot-wrap {
-      max-width: 280px;
-      margin: 0 auto 1.5rem auto;
-    }
-    .headshot-wrap img { height: 360px; }
-  }
-</style>
+      /* Bigger headshot (desktop) */
+      .headshot-wrap {
+        border-radius: 18px;
+        overflow: hidden;
+        max-width: 440px;
+      }
+      .headshot-wrap img {
+        width: 100%;
+        height: 560px;
+        object-fit: cover;
+        object-position: 50% 18%;
+        transform: scale(1.22); /* zoom in a bit more */
+        display: block;
+      }
+
+      /* Slightly nicer paragraph spacing in the right column */
+      .about-copy p { margin: 0 0 1.25rem 0; }
+
+      /* Mobile: stack + center image */
+      @media screen and (max-width: 736px) {
+        .headshot-wrap {
+          max-width: 300px;
+          margin: 0 auto 1.5rem auto;
+        }
+        .headshot-wrap img { height: 380px; }
+      }
+    </style>
+  </head>
+
+  <body class="is-preload">
+    <div id="wrapper">
+
+      <!-- Header -->
+      <header id="header">
+        <div class="inner">
+          <a href="index.html" class="logo">
+            <span class="title">Kyle Nguyen</span>
+          </a>
+          <nav>
+            <ul>
+              <li><a href="#menu">Menu</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Menu -->
+      <nav id="menu">
+        <h2>Menu</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+
+      <!-- Main -->
+      <div id="main">
+        <div class="inner">
+
+          <header class="major">
+            <h1>About</h1>
+          </header>
+
+          <!-- Layout: image left, text right (desktop); stacked (mobile) -->
+          <div class="row gtr-200 about-grid">
+            <!-- Left: Headshot -->
+            <div class="col-5 col-12-medium">
+              <div class="headshot-wrap">
+                <img src="images/KyleNguyenFrontHeadshot.jpg" alt="Kyle Nguyen headshot" />
+              </div>
+            </div>
+
+            <!-- Right: Bio + Links -->
+            <div class="col-7 col-12-medium about-copy">
+              <p>
+                I grew up in the NASA–Houston area, which helped shape an early interest in science and problem-solving. Alongside
+                academics, I spent much of high school in music—primarily saxophone—and competed in TMEA ensembles, including jazz and
+                concert band.
+              </p>
+
+              <p>
+                I began college at the University of Houston, where I earned my EMT license and worked in clinical settings. That experience
+                gave me a practical view of how care is delivered day-to-day and reinforced my interest in work that improves clinical outcomes
+                and workflows.
+              </p>
+
+              <p>
+                I later transferred to the University of Texas at Austin to study Human Biology. Since then, I’ve focused on research and
+                projects at the intersection of biology and computation—especially efforts that turn complex biological questions into clear,
+                reproducible analyses and results that are easy to communicate.
+              </p>
+
+              <section class="box">
+                <h2>Links</h2>
+                <ul class="actions">
+                  <li><a href="mailto:ktnuyen04@gmail.com" class="button primary">Email</a></li>
+                  <li><a href="https://github.com/kyle-nguyen-git" class="button" target="_blank" rel="noopener">GitHub</a></li>
+                  <li><a href="https://www.linkedin.com/in/kyletrungnguyen" class="button" target="_blank" rel="noopener">LinkedIn</a></li>
+                </ul>
+              </section>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <div class="inner">
+          <ul class="icons">
+            <li>
+              <a href="mailto:ktnuyen04@gmail.com" class="icon solid fa-envelope">
+                <span class="label">Email</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/kyle-nguyen-git" class="icon brands fa-github" target="_blank" rel="noopener">
+                <span class="label">GitHub</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/kyletrungnguyen" class="icon brands fa-linkedin" target="_blank" rel="noopener">
+                <span class="label">LinkedIn</span>
+              </a>
+            </li>
+          </ul>
+
+          <ul class="copyright">
+            <li>&copy; Kyle Nguyen</li>
+          </ul>
+        </div>
+      </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
