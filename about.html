@@ -1,123 +1,28 @@
-<!DOCTYPE HTML>
-<html>
-  <head>
-    <title>About — Kyle Nguyen</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/custom.css?v=11" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-  </head>
+<style>
+  /* About layout */
+  .about-grid { align-items: flex-start; }
 
-  <body class="is-preload">
-    <div id="wrapper">
+  /* Bigger headshot */
+  .headshot-wrap {
+    border-radius: 18px;
+    overflow: hidden;
+    max-width: 420px;   /* makes it feel bigger */
+  }
+  .headshot-wrap img {
+    width: 100%;
+    height: 540px;      /* makes it taller + more “present” */
+    object-fit: cover;
+    object-position: 50% 18%;
+    transform: scale(1.18); /* slightly zoomed */
+    display: block;
+  }
 
-      <!-- Header -->
-      <header id="header">
-        <div class="inner">
-          <a href="index.html" class="logo">
-            <span class="title">Kyle Nguyen</span>
-          </a>
-          <nav>
-            <ul>
-              <li><a href="#menu">Menu</a></li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-
-      <!-- Menu -->
-      <nav id="menu">
-        <h2>Menu</h2>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-        </ul>
-      </nav>
-
-      <!-- Main -->
-      <div id="main">
-        <div class="inner">
-
-          <header class="major">
-            <h1>About</h1>
-          </header>
-
-          <!-- Headshot (centered + cropped, more zoom) -->
-          <div style="max-width: 260px; margin: 0 auto 1.5rem auto; border-radius: 18px; overflow: hidden; height: 320px;">
-            <img
-              src="images/KyleNguyenFrontHeadshot.jpg"
-              alt="Kyle Nguyen headshot"
-              style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 18%; transform: scale(1.22); display: block;"
-            />
-          </div>
-
-          <!-- Bio (no box) -->
-          <p style="max-width: 60rem; margin-left: auto; margin-right: auto;">
-            I grew up in the NASA–Houston area, which helped shape an early interest in science and problem-solving. Alongside
-            academics, I spent much of high school in music—primarily saxophone—and competed in TMEA ensembles, including jazz and
-            concert band.
-          </p>
-
-          <p style="max-width: 60rem; margin-left: auto; margin-right: auto;">
-            I began college at the University of Houston, where I earned my EMT license and worked in clinical settings. That experience
-            gave me a practical view of how care is delivered day-to-day and reinforced my interest in work that improves clinical outcomes
-            and workflows.
-          </p>
-
-          <p style="max-width: 60rem; margin-left: auto; margin-right: auto;">
-            I later transferred to the University of Texas at Austin to study Human Biology. Since then, I’ve focused on research and
-            projects at the intersection of biology and computation—especially efforts that turn complex biological questions into clear,
-            reproducible analyses and results that are easy to communicate.
-          </p>
-
-          <!-- Links -->
-          <section class="box" style="max-width: 60rem; margin-left: auto; margin-right: auto;">
-            <h2>Links</h2>
-            <ul class="actions">
-              <li><a href="mailto:ktnuyen04@gmail.com" class="button primary">Email</a></li>
-              <li><a href="https://github.com/kyle-nguyen-git" class="button" target="_blank" rel="noopener">GitHub</a></li>
-              <li><a href="https://www.linkedin.com/in/kyletrungnguyen" class="button" target="_blank" rel="noopener">LinkedIn</a></li>
-            </ul>
-          </section>
-
-        </div>
-      </div>
-
-      <!-- Footer -->
-      <footer id="footer">
-        <div class="inner">
-          <ul class="icons">
-            <li>
-              <a href="mailto:ktnuyen04@gmail.com" class="icon solid fa-envelope">
-                <span class="label">Email</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/kyle-nguyen-git" class="icon brands fa-github" target="_blank" rel="noopener">
-                <span class="label">GitHub</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/in/kyletrungnguyen" class="icon brands fa-linkedin" target="_blank" rel="noopener">
-                <span class="label">LinkedIn</span>
-              </a>
-            </li>
-          </ul>
-
-          <ul class="copyright">
-            <li>&copy; Kyle Nguyen</li>
-          </ul>
-        </div>
-      </footer>
-
-    </div>
-
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-  </body>
-</html>
+  /* Mobile: center + shrink */
+  @media screen and (max-width: 736px) {
+    .headshot-wrap {
+      max-width: 280px;
+      margin: 0 auto 1.5rem auto;
+    }
+    .headshot-wrap img { height: 360px; }
+  }
+</style>
