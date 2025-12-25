@@ -11,6 +11,32 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/custom.css?v=11" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+    <!-- Page-only: tighten top spacing on homepage -->
+    <style>
+      /* Pull homepage content up (but not flush to the top) */
+      #main { padding-top: 0.75rem !important; }
+      #main > .inner { padding-top: 0 !important; }
+
+      /* Reduce the default Phantom "hero" gap */
+      header.intro {
+        padding-top: 2.75rem !important;
+        margin-bottom: 2.25rem !important;
+      }
+
+      /* Slightly tighten spacing to the first section header */
+      header.intro + .section-header {
+        margin-top: 2.25rem !important;
+      }
+
+      /* Mobile tune */
+      @media screen and (max-width: 736px) {
+        header.intro {
+          padding-top: 2.1rem !important;
+          margin-bottom: 1.75rem !important;
+        }
+      }
+    </style>
   </head>
 
   <body class="is-preload">
@@ -28,13 +54,13 @@
       </header>
 
       <!-- Menu -->
-     <nav id="menu">
-  <h2>Menu</h2>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About Me</a></li>
-  </ul>
-</nav>
+      <nav id="menu">
+        <h2>Menu</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Me</a></li>
+        </ul>
+      </nav>
 
       <!-- Main -->
       <div id="main">
@@ -196,8 +222,3 @@
 
   </body>
 </html>
-
-
-
-
-
