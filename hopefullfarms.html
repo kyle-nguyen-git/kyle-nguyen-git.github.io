@@ -6,25 +6,80 @@
 -->
 <html>
   <head>
-    <title>Hope Full Farms | Kyle Nguyen</title>
+    <title>Hope Full Farm — Kyle Nguyen</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/custom.css" />
+
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+    <!-- Page-only styling (no custom.css changes needed) -->
+    <style>
+      /* Remove extra top gap on this page (pairs with your existing tight-top rules) */
+      body.tight-top #main > .inner > header:first-child {
+        margin-top: -0.8rem !important;
+      }
+
+      /* Make the main image MUCH smaller */
+      .hff-hero {
+        margin: 0 0 1.75rem 0 !important;
+      }
+      .hff-hero img {
+        width: 100%;
+        max-height: 320px;          /* key: stops it from being huge */
+        object-fit: cover;
+        border-radius: 18px;
+        display: block;
+      }
+
+      /* Small stat cards */
+      .hff-stats {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+        margin: 1.5rem 0 0.5rem 0;
+      }
+      .hff-card {
+        background: rgba(0,0,0,0.14);
+        border-radius: 16px;
+        padding: 1.1rem 1.1rem;
+        border: 1px solid rgba(255,255,255,0.08);
+      }
+      .hff-card .label {
+        opacity: 0.85;
+        font-size: 0.9rem;
+        margin: 0 0 0.25rem 0;
+      }
+      .hff-card .value {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin: 0;
+      }
+
+      @media screen and (max-width: 980px) {
+        .hff-stats { grid-template-columns: 1fr; }
+      }
+
+      /* Gallery spacing */
+      .hff-gallery { margin-top: 2rem; }
+      .hff-gallery .image.fit img {
+        border-radius: 18px;
+      }
+    </style>
   </head>
 
-  <!-- Add tight-top to reduce gap above header -->
   <body class="is-preload tight-top">
+    <!-- Wrapper -->
     <div id="wrapper">
 
       <!-- Header -->
       <header id="header">
         <div class="inner">
 
-          <!-- Logo -->
+          <!-- Logo (REMOVED Phantom symbol/logo image) -->
           <a href="index.html" class="logo">
-            <span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Kyle Nguyen</span>
+            <span class="title">Kyle Nguyen</span>
           </a>
 
           <!-- Nav -->
@@ -42,10 +97,9 @@
         <h2>Menu</h2>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="hopefullfarms.html">Hope Full Farms</a></li>
-          <!-- Optional: add these later when you make pages -->
-          <!-- <li><a href="parknow.html">ParkNow</a></li> -->
-          <!-- <li><a href="nuzzle.html">Nuzzle</a></li> -->
+          <li><a href="hopefullfarms.html">Hope Full Farm</a></li>
+          <!-- Add more links later as you build pages -->
+          <li><a href="https://www.hopefullfarm.org" target="_blank" rel="noopener">Hope Full Farm Website</a></li>
         </ul>
       </nav>
 
@@ -54,57 +108,90 @@
         <div class="inner">
 
           <header>
-            <h1>Hope Full Farms</h1>
+            <h1>Hope Full Farm</h1>
             <p>
-              Supporting outreach and operations for a community-focused nonprofit program, with an emphasis on
-              partnerships, school engagement, and sponsor outreach for the Junior Chef Challenge.
+              Through <strong>Project Advance Austin</strong> at UT Austin, I serve as a project management consultant supporting
+              Hope Full Farm’s <strong>Farm to Fork: Junior Chef Challenge</strong>.
             </p>
           </header>
 
-          <span class="image main">
-            <!-- Use whatever file you already added to /images -->
-            <img src="images/hopefullfarms.png" alt="Hope Full Farms outreach and Junior Chef Challenge" />
+          <!-- Small hero image (HFF1 first) -->
+          <span class="hff-hero">
+            <img src="images/HFF1.jpg" alt="Hope Full Farm (HFF1)" />
           </span>
 
           <section>
-            <h2>What I Worked On</h2>
+            <h2>What I Do</h2>
             <p>
-              My work centered on building a repeatable outreach pipeline and helping the team stay organized as we
-              expanded to new schools and community partners.
+              My role is a mix of building systems and executing: I set up organizing documents and spreadsheets to track
+              <strong>corporate outreach</strong>, <strong>influencer outreach</strong>, and <strong>junior chef applications</strong>—then I help
+              run the outreach itself through <strong>cold calls</strong> and <strong>email follow-ups</strong>.
             </p>
+
+            <div class="hff-stats">
+              <div class="hff-card">
+                <p class="label">Fundraising Goal</p>
+                <p class="value">$70,000+</p>
+              </div>
+              <div class="hff-card">
+                <p class="label">Raised So Far</p>
+                <p class="value">$45,000+</p>
+              </div>
+              <div class="hff-card">
+                <p class="label">Focus</p>
+                <p class="value">Farm to Fork Event</p>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2>About Hope Full Farm</h2>
+            <p>
+              Hope Full Farm is a Central Texas nonprofit focused on addressing childhood hunger and growing community impact through
+              its farm-based work and programs.
+            </p>
+
             <ul>
-              <li>Built and maintained outreach lists (schools, staff contacts, community organizations).</li>
-              <li>Wrote and iterated email templates for first touch + follow-ups.</li>
-              <li>Planned follow-up call workflows and helped coordinate timing around school calendars.</li>
-              <li>Researched sponsor prospects and supported early sponsorship outreach.</li>
-              <li>Kept internal tracking clean so we could see what was sent, what needs a call, and what’s next.</li>
+              <li>
+                <strong>Mission:</strong> fight childhood hunger and support future regenerative farmers.
+              </li>
+            </ul>
+
+            <ul class="actions">
+              <li><a class="button primary" href="https://www.hopefullfarm.org" target="_blank" rel="noopener">Visit Hope Full Farm</a></li>
+              <li><a class="button" href="https://www.hopefullfarm.org/farm-to-fork" target="_blank" rel="noopener">Farm to Fork Event</a></li>
             </ul>
           </section>
 
           <section>
-            <h2>Why It Matters</h2>
+            <h2>Farm to Fork: Junior Chef Challenge</h2>
             <p>
-              For programs like this, execution is everything. A good message doesn’t help if it doesn’t land in the
-              right inbox, at the right time, with a clear next step. The goal was to reduce friction for schools and
-              partners while keeping our team’s outreach consistent and easy to manage.
+              The Farm to Fork Junior Chef Challenge is a fundraising event that pairs youth competitors with local chefs to create
+              dishes using Hope Full Farm’s organic produce. It’s designed to be family-friendly while directly supporting the farm’s
+              mission and programs.
             </p>
           </section>
 
-          <section>
-            <h2>Tools and Approach</h2>
-            <ul>
-              <li>Simple tracking systems (spreadsheets, notes, lightweight templates).</li>
-              <li>Short, clear outreach messaging with an obvious call-to-action.</li>
-              <li>Follow-up cadence that’s respectful of school schedules.</li>
-              <li>Organizing contacts so calls/emails can be handed off without losing context.</li>
-            </ul>
+          <!-- Gallery: HFF1 already shown, then HFF2 and HFF3 in order -->
+          <section class="hff-gallery">
+            <h2>Gallery</h2>
+            <div class="box alt">
+              <div class="row gtr-uniform">
+                <div class="col-6 col-12-medium">
+                  <span class="image fit"><img src="images/HFF2.jpg" alt="Hope Full Farm (HFF2)" /></span>
+                </div>
+                <div class="col-6 col-12-medium">
+                  <span class="image fit"><img src="images/HFF3.jpg" alt="Hope Full Farm (HFF3)" /></span>
+                </div>
+              </div>
+            </div>
           </section>
 
           <section>
-            <h2>Next Steps</h2>
+            <h2>My Focus Right Now</h2>
             <p>
-              As we keep expanding, the focus is on improving response rates and making outreach more scalable without
-              losing the personal touch — tighter lists, cleaner messaging, and faster follow-through.
+              Build clean tracking systems for outreach + applications, keep the pipeline moving week-to-week, and help push the event
+              toward (and past) the fundraising goal.
             </p>
           </section>
 
