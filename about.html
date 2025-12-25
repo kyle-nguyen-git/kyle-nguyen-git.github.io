@@ -24,6 +24,7 @@
 
       .about-grid { align-items: flex-start; }
 
+      /* Headshot */
       .headshot-wrap {
         max-width: 680px;
         margin: 0 auto;
@@ -56,12 +57,21 @@
         color: var(--accent) !important;
       }
 
-      /* Built-with line (footer placement) */
+      /* Footer: force "Built with..." BELOW icons */
+      #footer .footer-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.7rem;
+        margin-bottom: 1.25rem;
+      }
+      #footer .footer-links .icons { margin: 0 !important; }
       #footer .built-with {
-        margin: 0.75rem 0 0 0;   /* space below the icon row */
-        font-size: 0.9rem;
-        opacity: 0.8;
+        margin: 0 !important;
+        display: block;
         text-align: center;
+        font-size: 0.9rem;
+        opacity: 0.85;
       }
 
       /* Mobile */
@@ -157,26 +167,28 @@
       <!-- Footer -->
       <footer id="footer">
         <div class="inner">
-          <ul class="icons">
-            <li>
-              <a href="mailto:ktnuyen04@gmail.com" class="icon solid fa-envelope">
-                <span class="label">Email</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/kyle-nguyen-git" class="icon brands fa-github" target="_blank" rel="noopener">
-                <span class="label">GitHub</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/in/kyletrungnguyen" class="icon brands fa-linkedin" target="_blank" rel="noopener">
-                <span class="label">LinkedIn</span>
-              </a>
-            </li>
-          </ul>
 
-          <!-- This now sits directly under the icons row -->
-          <p class="built-with">Built with HTML + CSS.</p>
+          <div class="footer-links">
+            <ul class="icons">
+              <li>
+                <a href="mailto:ktnuyen04@gmail.com" class="icon solid fa-envelope">
+                  <span class="label">Email</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/kyle-nguyen-git" class="icon brands fa-github" target="_blank" rel="noopener">
+                  <span class="label">GitHub</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/kyletrungnguyen" class="icon brands fa-linkedin" target="_blank" rel="noopener">
+                  <span class="label">LinkedIn</span>
+                </a>
+              </li>
+            </ul>
+
+            <p class="built-with">Built with HTML + CSS.</p>
+          </div>
 
           <ul class="copyright">
             <li>&copy; Kyle Nguyen</li>
