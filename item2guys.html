@@ -21,7 +21,7 @@
       header.major { margin: 0 0 1rem 0 !important; }
       header.major h1 { margin: 0 !important; }
 
-      /* Hero layout */
+      /* Hero */
       .hero-grid { align-items: flex-start; }
       .hero-image {
         border-radius: 18px;
@@ -35,7 +35,15 @@
         object-fit: cover;
       }
 
-      /* Quick stats row */
+      /* Soft cards (for stats + popups text) */
+      .soft-card {
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 16px;
+        padding: 1.05rem 1.1rem;
+      }
+
+      /* Quick stats */
       .quick-stats {
         margin-top: 1.25rem;
         display: grid;
@@ -69,6 +77,21 @@
       .actions .button:hover {
         border-color: var(--accent) !important;
         color: var(--accent) !important;
+      }
+
+      /* Section header (if your custom.css already styles it, this is harmless) */
+      .section-header {
+        margin-top: 3.0rem;
+        margin-bottom: 1.1rem;
+        padding-top: 1.1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .section-header h2 {
+        font-size: 1.35rem;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        color: var(--text-main);
+        margin: 0;
       }
 
       /* Footer: make "Built with..." sit under icons */
@@ -128,7 +151,8 @@
           <header class="major">
             <h1>1 Item 2 Guys</h1>
             <p>
-              A pop-up food concept built around simple menus, tight execution, and high standards.
+              A small pop-up project that turned into one of my favorite ways to create something fun with friends
+              and meet people through food.
             </p>
           </header>
 
@@ -136,173 +160,283 @@
           <div class="row gtr-200 hero-grid">
             <div class="col-6 col-12-medium">
               <div class="hero-image">
-                <!-- Replace this image with your best hero photo -->
-                <img src="images/1item2guys-hero.jpg" alt="1 Item 2 Guys pop-up" />
+                <!-- Replace with your best hero photo -->
+                <img src="images/1item2guys/hero.jpg" alt="1 Item 2 Guys pop-up" />
               </div>
             </div>
 
             <div class="col-6 col-12-medium">
-              <h2 style="margin-top:0;">What it is</h2>
+              <h2 style="margin-top:0;">How it started</h2>
               <p>
-                1 Item 2 Guys is a pop-up concept we run with one goal: deliver a restaurant-quality experience
-                without a bloated menu. The constraint is the point — it forces prep, timing, and consistency.
+                The idea started after going to a ramen pop-up on campus — it was simple, packed, and felt like an
+                actual experience instead of just grabbing food. After spending a summer in New York and seeing how
+                common pop-ups are there, I wanted to try building something like that back in Austin.
+              </p>
+              <p>
+                Since then, this has turned into a chance for us to create a unique night, connect with people,
+                and grow with the community around us.
               </p>
 
-              <p>
-                We test recipes, run small batches, and iterate quickly based on what people actually buy and
-                what we can execute at a high level during service.
-              </p>
+              <div class="soft-card" style="margin-top: 1.15rem;">
+                <p style="margin: 0 0 0.85rem 0;">
+                  If you want to see the food and vibe, the Instagram is basically the “home base.”
+                </p>
+                <ul class="actions" style="margin: 0;">
+                  <li>
+                    <a
+                      href="https://www.instagram.com/1item2guys/"
+                      class="button"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      Follow @1item2guys on Instagram
+                    </a>
+                  </li>
+                  <li>
+                    <a href="mailto:ktnuyen04@gmail.com?subject=1%20Item%202%20Guys%20Inquiry" class="button">
+                      Contact
+                    </a>
+                  </li>
+                </ul>
+              </div>
 
-              <ul>
-                <li>Streamlined menu → faster lines and better consistency</li>
-                <li>Execution-first mindset → prep systems, station roles, and checklists</li>
-                <li>Iterative approach → improve each pop-up based on feedback + throughput</li>
-              </ul>
-
-              <ul class="actions" style="margin-top: 1rem;">
-                <li><a href="mailto:ktnuyen04@gmail.com?subject=1%20Item%202%20Guys%20Inquiry" class="button">Book / Collaborate</a></li>
-                <li><a href="#gallery" class="button">Photos</a></li>
-              </ul>
-
-              <!-- Optional quick stats (edit values or delete the whole block) -->
+              <!-- Quick stats (edit anytime) -->
               <div class="quick-stats">
                 <div class="stat-card">
-                  <div class="label">Model</div>
-                  <div class="value">Pop-ups</div>
+                  <div class="label">Instagram</div>
+                  <div class="value">~1,000 followers</div>
                 </div>
                 <div class="stat-card">
-                  <div class="label">Menu strategy</div>
-                  <div class="value">Single-item focus</div>
+                  <div class="label">Demand</div>
+                  <div class="value">300+ reservation requests</div>
                 </div>
                 <div class="stat-card">
-                  <div class="label">Priorities</div>
-                  <div class="value">Speed • Consistency • Taste</div>
+                  <div class="label">Reach</div>
+                  <div class="value">300K+ total views</div>
                 </div>
               </div>
+
+              <p style="margin-top: 1.15rem;">
+                A couple things I’m proud of: WhenWhereWhatAustin follows the page, and we’ve had guests fly in from
+                places like Florida, Pennsylvania, North Carolina, and across Texas to come try it.
+              </p>
             </div>
           </div>
 
-          <!-- Section: The “One Item” philosophy -->
-          <section class="section-header">
-            <h2>The “One Item” philosophy</h2>
+          <!-- Food Photos -->
+          <section class="section-header" id="food">
+            <h2>Food photos</h2>
           </section>
-          <p>
-            One-item menus aren’t a gimmick — they’re operational leverage. With fewer variables, we can tighten
-            the entire workflow: prep lists, ingredient sourcing, station roles, timing, and quality control.
-            That’s how you go from “good” to “repeatable.”
-          </p>
 
-          <!-- Section: Menu (tiles) -->
-          <section class="section-header">
-            <h2>Menu rotations</h2>
-          </section>
+          <p>
+            Replace these with your best shots. I’d do 6–9 total here (enough to feel real, not overwhelming).
+          </p>
 
           <section class="tiles">
             <article class="style1">
               <span class="image">
-                <img src="images/1item2guys-steak-frites.jpg" alt="Steak frites" />
+                <img src="images/1item2guys/food-1.jpg" alt="Food photo 1" />
               </span>
               <a href="#">
-                <h2>Steak Frites</h2>
-                <div class="content">
-                  <p>Classic, execution-heavy, and designed for speed during service.</p>
-                </div>
+                <h2>Food</h2>
+                <div class="content"><p>Drop your caption here (optional).</p></div>
               </a>
             </article>
 
             <article class="style2">
               <span class="image">
-                <img src="images/1item2guys-burger.jpg" alt="Burger" />
+                <img src="images/1item2guys/food-2.jpg" alt="Food photo 2" />
               </span>
               <a href="#">
-                <h2>Signature Burger</h2>
-                <div class="content">
-                  <p>Focused build, consistent cook, and a tight ingredient list.</p>
-                </div>
+                <h2>Food</h2>
+                <div class="content"><p>Drop your caption here (optional).</p></div>
               </a>
             </article>
 
             <article class="style3">
               <span class="image">
-                <img src="images/1item2guys-special.jpg" alt="Special menu item" />
+                <img src="images/1item2guys/food-3.jpg" alt="Food photo 3" />
               </span>
               <a href="#">
-                <h2>Seasonal Special</h2>
-                <div class="content">
-                  <p>Short-run experiments — we keep what works and cut what doesn’t.</p>
-                </div>
+                <h2>Food</h2>
+                <div class="content"><p>Drop your caption here (optional).</p></div>
               </a>
             </article>
-          </section>
 
-          <!-- Section: How we run it -->
-          <section class="section-header">
-            <h2>How we run a pop-up</h2>
-          </section>
-
-          <div class="row">
-            <div class="col-6 col-12-medium">
-              <h3>Systems</h3>
-              <ul>
-                <li>Prep lists + pars for every ingredient</li>
-                <li>Station roles and handoffs (line flow matters)</li>
-                <li>Timing targets (throughput without quality drop)</li>
-                <li>Post-pop-up debrief: what slowed us down, what sold, what ran out</li>
-              </ul>
-            </div>
-            <div class="col-6 col-12-medium">
-              <h3>What we’re optimizing</h3>
-              <ul>
-                <li>Consistency across every plate</li>
-                <li>Shorter ticket times + cleaner service rhythm</li>
-                <li>Ingredient efficiency (less waste)</li>
-                <li>Better customer experience (simple ordering, fast pickup)</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Section: Gallery -->
-          <section class="section-header" id="gallery">
-            <h2>Gallery</h2>
-          </section>
-
-          <section class="tiles">
             <article class="style4">
               <span class="image">
-                <img src="images/1item2guys-gallery-1.jpg" alt="Pop-up photo 1" />
+                <img src="images/1item2guys/food-4.jpg" alt="Food photo 4" />
               </span>
               <a href="#">
-                <h2>Service</h2>
-                <div class="content">
-                  <p>Line flow + station setup.</p>
-                </div>
+                <h2>Food</h2>
+                <div class="content"><p>Drop your caption here (optional).</p></div>
               </a>
             </article>
 
             <article class="style5">
               <span class="image">
-                <img src="images/1item2guys-gallery-2.jpg" alt="Pop-up photo 2" />
+                <img src="images/1item2guys/food-5.jpg" alt="Food photo 5" />
               </span>
               <a href="#">
-                <h2>Plating</h2>
-                <div class="content">
-                  <p>Consistency checks.</p>
-                </div>
+                <h2>Food</h2>
+                <div class="content"><p>Drop your caption here (optional).</p></div>
               </a>
             </article>
 
             <article class="style6">
               <span class="image">
-                <img src="images/1item2guys-gallery-3.jpg" alt="Pop-up photo 3" />
+                <img src="images/1item2guys/food-6.jpg" alt="Food photo 6" />
               </span>
               <a href="#">
-                <h2>Prep</h2>
-                <div class="content">
-                  <p>Batching and workflow.</p>
-                </div>
+                <h2>Food</h2>
+                <div class="content"><p>Drop your caption here (optional).</p></div>
               </a>
             </article>
           </section>
+
+          <!-- Popups -->
+          <section class="section-header" id="popups">
+            <h2>Pop-ups</h2>
+          </section>
+
+          <p>
+            We’ve done 3 pop-ups so far. Each one has its own set of photos + menu.
+          </p>
+
+          <!-- Popup 1 -->
+          <div class="soft-card" style="margin-bottom: 1.25rem;">
+            <h3 style="margin-top:0;">Pop-up #1</h3>
+            <p style="margin-bottom: 0;">
+              Add a short line about the vibe/location/date if you want.
+            </p>
+          </div>
+
+          <section class="tiles">
+            <article class="style1">
+              <span class="image">
+                <img src="images/1item2guys/popup1-1.jpg" alt="Popup 1 photo 1" />
+              </span>
+              <a href="#"><h2>Pop-up #1</h2><div class="content"><p>Photo</p></div></a>
+            </article>
+            <article class="style2">
+              <span class="image">
+                <img src="images/1item2guys/popup1-2.jpg" alt="Popup 1 photo 2" />
+              </span>
+              <a href="#"><h2>Pop-up #1</h2><div class="content"><p>Photo</p></div></a>
+            </article>
+            <article class="style3">
+              <span class="image">
+                <img src="images/1item2guys/popup1-3.jpg" alt="Popup 1 photo 3" />
+              </span>
+              <a href="#"><h2>Pop-up #1</h2><div class="content"><p>Photo</p></div></a>
+            </article>
+
+            <!-- Menu image for popup 1 -->
+            <article class="style4">
+              <span class="image">
+                <img src="images/1item2guys/menu1.jpg" alt="Menu for pop-up 1" />
+              </span>
+              <a href="#"><h2>Menu</h2><div class="content"><p>Pop-up #1 menu</p></div></a>
+            </article>
+          </section>
+
+          <!-- Popup 2 -->
+          <div class="soft-card" style="margin: 2.25rem 0 1.25rem 0;">
+            <h3 style="margin-top:0;">Pop-up #2</h3>
+            <p style="margin-bottom: 0;">
+              Add a short line about the vibe/location/date if you want.
+            </p>
+          </div>
+
+          <section class="tiles">
+            <article class="style5">
+              <span class="image">
+                <img src="images/1item2guys/popup2-1.jpg" alt="Popup 2 photo 1" />
+              </span>
+              <a href="#"><h2>Pop-up #2</h2><div class="content"><p>Photo</p></div></a>
+            </article>
+            <article class="style6">
+              <span class="image">
+                <img src="images/1item2guys/popup2-2.jpg" alt="Popup 2 photo 2" />
+              </span>
+              <a href="#"><h2>Pop-up #2</h2><div class="content"><p>Photo</p></div></a>
+            </article>
+            <article class="style1">
+              <span class="image">
+                <img src="images/1item2guys/popup2-3.jpg" alt="Popup 2 photo 3" />
+              </span>
+              <a href="#"><h2>Pop-up #2</h2><div class="content"><p>Photo</p></div></a>
+            </article>
+
+            <!-- Menu image for popup 2 -->
+            <article class="style2">
+              <span class="image">
+                <img src="images/1item2guys/menu2.jpg" alt="Menu for pop-up 2" />
+              </span>
+              <a href="#"><h2>Menu</h2><div class="content"><p>Pop-up #2 menu</p></div></a>
+            </article>
+          </section>
+
+          <!-- Popup 3 -->
+          <div class="soft-card" style="margin: 2.25rem 0 1.25rem 0;">
+            <h3 style="margin-top:0;">Pop-up #3</h3>
+            <p style="margin-bottom: 0;">
+              Add a short line about the vibe/location/date if you want.
+            </p>
+          </div>
+
+          <section class="tiles">
+            <article class="style3">
+              <span class="image">
+                <img src="images/1item2guys/popup3-1.jpg" alt="Popup 3 photo 1" />
+              </span>
+              <a href="#"><h2>Pop-up #3</h2><div class="content"><p>Photo</p></div></a>
+            </article>
+            <article class="style4">
+              <span class="image">
+                <img src="images/1item2guys/popup3-2.jpg" alt="Popup 3 photo 2" />
+              </span>
+              <a href="#"><h2>Pop-up #3</h2><div class="content"><p>Photo</p></div></a>
+            </article>
+            <article class="style5">
+              <span class="image">
+                <img src="images/1item2guys/popup3-3.jpg" alt="Popup 3 photo 3" />
+              </span>
+              <a href="#"><h2>Pop-up #3</h2><div class="content"><p>Photo</p></div></a>
+            </article>
+
+            <!-- Menu image for popup 3 -->
+            <article class="style6">
+              <span class="image">
+                <img src="images/1item2guys/menu3.jpg" alt="Menu for pop-up 3" />
+              </span>
+              <a href="#"><h2>Menu</h2><div class="content"><p>Pop-up #3 menu</p></div></a>
+            </article>
+          </section>
+
+          <!-- Close -->
+          <section class="section-header">
+            <h2>Want updates?</h2>
+          </section>
+
+          <div class="soft-card">
+            <p style="margin: 0 0 1rem 0;">
+              The easiest way to keep up with future drops is the Instagram. That’s where we post menus, dates,
+              and the vibe.
+            </p>
+            <ul class="actions" style="margin: 0;">
+              <li>
+                <a href="https://www.instagram.com/1item2guys/" class="button" target="_blank" rel="noopener">
+                  Follow @1item2guys
+                </a>
+              </li>
+              <li>
+                <a href="mailto:ktnuyen04@gmail.com?subject=1%20Item%202%20Guys%20Inquiry" class="button">
+                  Reach out
+                </a>
+              </li>
+            </ul>
+          </div>
 
         </div>
       </div>
