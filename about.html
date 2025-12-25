@@ -10,43 +10,44 @@
 
     <!-- Page-only styling -->
     <style>
-      /* Bring header down slightly (but still tighter than default) */
-      #header { padding-top: 0.95rem !important; padding-bottom: 0.55rem !important; }
+      /* Keep header slightly off the very top edge */
+      #header { padding-top: 0.95rem !important; padding-bottom: 0.45rem !important; }
       #header > .inner { padding-top: 0 !important; padding-bottom: 0 !important; }
 
-      /* Reduce big gap above content + title */
-      #main { padding-top: 0.75rem !important; }
+      /* Pull main content up closer to the header (smaller gap to "About Me") */
+      #main { padding-top: 0.25rem !important; }
       #main > .inner { padding-top: 0 !important; }
-      header.major { margin: 0 0 1.15rem 0 !important; }
-      header.major h1 { margin-top: 0 !important; }
+
+      /* Reduce the title block spacing */
+      header.major { margin: 0 0 0.85rem 0 !important; }
+      header.major h1 { margin: 0 !important; }
 
       .about-grid { align-items: flex-start; }
 
       /*
         Headshot:
         - no squish (object-fit: cover)
-        - less "zoom" by giving it more height (shows more of the photo)
-        - slight top/bottom crop only
+        - slightly taller + nudge the crop DOWN a touch
       */
       .headshot-wrap {
         max-width: 680px;
         margin: 0 auto;
         border-radius: 18px;
         overflow: hidden;
-        height: 640px;            /* was 520px (more vertical space, less zoomed look) */
+        height: 680px;              /* was 640px */
       }
       .headshot-wrap img {
         width: 100%;
         height: 100%;
-        object-fit: cover;        /* crops without distortion */
-        object-position: center 40%; /* shift up a touch to keep more body visible */
+        object-fit: cover;
+        object-position: center 46%; /* was 40% -> moves image DOWN slightly */
         display: block;
       }
 
-      /* Nicer paragraph spacing (slightly tighter to match taller image) */
+      /* Paragraph spacing */
       .about-copy p { margin: 0 0 1.05rem 0; }
 
-      /* Links row: no box, consistent buttons */
+      /* Links row */
       .about-links { margin-top: 1.15rem; }
       .about-links .actions { margin-bottom: 0; }
       .about-links .button {
@@ -63,13 +64,15 @@
       /* Mobile */
       @media screen and (max-width: 736px) {
         #header { padding-top: 0.85rem !important; }
-        #main { padding-top: 0.65rem !important; }
+        #main { padding-top: 0.25rem !important; }
+        header.major { margin: 0 0 0.75rem 0 !important; }
 
         .headshot-wrap {
           max-width: 440px;
-          height: 560px;          /* was 460px */
+          height: 600px;            /* was 560px */
           margin: 0 auto 1.15rem auto;
         }
+        .headshot-wrap img { object-position: center 46%; }
       }
     </style>
   </head>
@@ -108,7 +111,6 @@
             <h1>About Me</h1>
           </header>
 
-          <!-- Layout: image left, text right (desktop); stacked (mobile) -->
           <div class="row gtr-200 about-grid">
 
             <!-- Left: Image -->
@@ -135,7 +137,6 @@
                 in VALORANT at 16. I also enjoy skiing, trying new restaurants, and exploring new places.
               </p>
 
-              <!-- Links (no box, no header) -->
               <section class="about-links">
                 <ul class="actions">
                   <li><a href="mailto:ktnuyen04@gmail.com" class="button">Email</a></li>
