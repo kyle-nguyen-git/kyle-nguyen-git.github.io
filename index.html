@@ -12,27 +12,30 @@
     <link rel="stylesheet" href="assets/css/custom.css?v=11" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-    <!-- Page-only: tighten top spacing on homepage -->
+    <!-- Page-only: pull homepage content UP (reduce the big top gap) -->
     <style>
-      /* Pull homepage content up (but not flush to the top) */
-      #main { padding-top: 0.75rem !important; }
-      #main > .inner { padding-top: 0 !important; }
+      /* Phantom adds a lot of top padding here */
+      #main { padding-top: 0 !important; }
 
-      /* Reduce the default Phantom "hero" gap */
+      /* Keep a little breathing room, but much less than default */
+      #main > .inner { padding-top: 1.25rem !important; }
+
+      /* Pull the intro upward without touching the header/menu */
       header.intro {
-        padding-top: 2.75rem !important;
+        padding-top: 0 !important;
+        margin-top: -1.5rem !important;   /* key: moves everything up */
         margin-bottom: 2.25rem !important;
       }
 
-      /* Slightly tighten spacing to the first section header */
+      /* Slightly tighten spacing before first section header */
       header.intro + .section-header {
-        margin-top: 2.25rem !important;
+        margin-top: 2rem !important;
       }
 
-      /* Mobile tune */
       @media screen and (max-width: 736px) {
+        #main > .inner { padding-top: 1rem !important; }
         header.intro {
-          padding-top: 2.1rem !important;
+          margin-top: -1.1rem !important;
           margin-bottom: 1.75rem !important;
         }
       }
