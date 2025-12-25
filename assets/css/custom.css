@@ -258,3 +258,30 @@ a:hover { color: var(--text-main) !important; }
   color: var(--text-muted);
 }
 
+/* =========================
+   Global: Consistent Top Gap
+   Add class="tight-top" to <body> on any page that should use this spacing.
+   ========================= */
+
+body.tight-top #main {
+  padding-top: 0 !important;           /* Phantom adds a big top pad */
+}
+
+body.tight-top #main > .inner {
+  padding-top: 1.25rem !important;     /* your new standard */
+}
+
+/* Pull the first header up slightly for a cleaner start */
+body.tight-top #main > .inner > header:first-child {
+  padding-top: 0 !important;
+  margin-top: -1.15rem !important;
+  margin-bottom: 2.25rem !important;
+}
+
+/* Mobile tweak */
+@media screen and (max-width: 736px) {
+  body.tight-top #main > .inner > header:first-child {
+    margin-top: -0.85rem !important;
+    margin-bottom: 1.75rem !important;
+  }
+}
