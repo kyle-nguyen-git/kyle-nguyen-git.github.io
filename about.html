@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>About — Kyle Nguyen</title>
+    <title>About Me — Kyle Nguyen</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
@@ -11,49 +11,53 @@
     <!-- Page-only styling -->
     <style>
       /* Pull header closer to top */
-      #header { padding-top: 1rem !important; padding-bottom: 0.75rem !important; }
+      #header { padding-top: 0.9rem !important; padding-bottom: 0.6rem !important; }
       #header > .inner { padding-top: 0 !important; padding-bottom: 0 !important; }
 
       /* Reduce the big gap above content */
-      #main { padding-top: 1.25rem !important; }
+      #main { padding-top: 1.1rem !important; }
       #main > .inner { padding-top: 0 !important; }
 
       /* Desktop: image left, text right */
       .about-grid { align-items: flex-start; }
 
-      /* Headshot: smaller height so it doesn't force a scroll */
+      /* Headshot: bigger again, but capped so it won't force a scroll */
       .headshot-wrap {
-        max-width: 520px;
+        max-width: 680px;     /* bigger than before */
         margin: 0 auto;
         border-radius: 18px;
         overflow: hidden;
-
-        /* keeps the card from being too tall */
-        max-height: 520px;
       }
       .headshot-wrap img {
         display: block;
         width: 100%;
-        height: auto; /* full image, no crop */
+        height: auto;         /* full image, no crop */
+        max-height: 560px;    /* keeps it from being too tall */
       }
 
       /* Nicer paragraph spacing */
       .about-copy p { margin: 0 0 1.25rem 0; }
 
-      /* Links row: no box, no title */
+      /* Links row: no box, no title, consistent button styling */
       .about-links { margin-top: 1.25rem; }
       .about-links .actions { margin-bottom: 0; }
-      .about-links .button { box-shadow: none; }
+      .about-links .button {
+        background: transparent !important;
+        border: 1px solid rgba(255,255,255,0.22) !important;
+        color: var(--text-main) !important;
+        box-shadow: none !important;
+      }
+      .about-links .button:hover {
+        border-color: var(--accent) !important;
+        color: var(--accent) !important;
+      }
 
-      /* Make Email look like the others (no "primary" styling) */
-      /* (Handled in HTML by removing .primary) */
-
-      /* Mobile: stack + slightly smaller image */
+      /* Mobile */
       @media screen and (max-width: 736px) {
         #header { padding-top: 0.75rem !important; }
-        #main { padding-top: 1rem !important; }
-
-        .headshot-wrap { max-width: 360px; max-height: 460px; margin: 0 auto 1.25rem auto; }
+        #main { padding-top: 0.9rem !important; }
+        .headshot-wrap { max-width: 420px; margin: 0 auto 1.25rem auto; }
+        .headshot-wrap img { max-height: 520px; }
       }
     </style>
   </head>
@@ -80,7 +84,7 @@
         <h2>Menu</h2>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="about.html">About Me</a></li>
         </ul>
       </nav>
 
@@ -89,40 +93,33 @@
         <div class="inner">
 
           <header class="major">
-            <h1>About</h1>
+            <h1>About Me</h1>
           </header>
 
           <!-- Layout: image left, text right (desktop); stacked (mobile) -->
-          <div class="row gtr-200 about-grid">
+          <div class="row gtr-150 about-grid">
 
             <!-- Left: Photo -->
-            <div class="col-5 col-12-medium">
+            <div class="col-6 col-12-medium">
               <div class="headshot-wrap">
                 <img src="images/KyleNguyenUTRun.JPG" alt="Kyle Nguyen photo" />
               </div>
             </div>
 
             <!-- Right: Bio + Links -->
-            <div class="col-7 col-12-medium about-copy">
+            <div class="col-6 col-12-medium about-copy">
               <p>
-                I grew up in the NASA–Houston area, which helped shape an early interest in science and problem-solving. Alongside
-                academics, I spent much of high school in music—primarily saxophone—and competed in TMEA ensembles, including jazz and
-                concert band.
+                I grew up in the NASA–Houston area and spent much of high school in music, primarily saxophone, performing and competing in TMEA jazz and concert ensembles.
               </p>
 
               <p>
-                I began college at the University of Houston, where I earned my EMT license and worked in clinical settings. That experience
-                gave me a practical view of how care is delivered day-to-day and reinforced my interest in work that improves clinical outcomes
-                and workflows.
+                I began college at the University of Houston, earned my EMT license, and worked in clinical settings before transferring to the University of Texas at Austin to study Human Biology.
               </p>
 
               <p>
-                I later transferred to the University of Texas at Austin to study Human Biology. Since then, I’ve focused on research and
-                projects at the intersection of biology and computation—especially efforts that turn complex biological questions into clear,
-                reproducible analyses and results that are easy to communicate.
+                Outside of school, I’m competitive by nature. I reached Grandmaster in Overwatch at age 14 and Immortal in Valorant at age 16. I also enjoy skiing, trying new restaurants, and exploring new places.
               </p>
 
-              <!-- Links (no title, no box) -->
               <div class="about-links">
                 <ul class="actions">
                   <li><a href="mailto:ktnuyen04@gmail.com" class="button">Email</a></li>
