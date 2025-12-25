@@ -26,19 +26,24 @@
       }
       .hff-hero img {
         width: 100%;
-        max-height: 320px;          /* key: stops it from being huge */
+        max-height: 320px;
         object-fit: cover;
         border-radius: 18px;
         display: block;
       }
 
+      /* Add spacing between hero image and the next paragraph */
+      .hff-hero + section {
+        margin-top: 1.25rem;
+      }
+
       /* Stat cards (2 cards, centered) */
       .hff-stats {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 cards */
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 1rem;
         margin: 1.5rem auto 0.5rem auto;
-        max-width: 780px; /* centers the grid nicely */
+        max-width: 780px;
       }
       .hff-card {
         background: rgba(0,0,0,0.14);
@@ -61,11 +66,14 @@
         .hff-stats { grid-template-columns: 1fr; }
       }
 
+      /* Add spacing between fundraising/stat section and About section */
+      .hff-about {
+        margin-top: 2.5rem;
+      }
+
       /* Gallery spacing */
       .hff-gallery { margin-top: 2rem; }
-      .hff-gallery .image.fit img {
-        border-radius: 18px;
-      }
+      .hff-gallery .image.fit img { border-radius: 18px; }
     </style>
   </head>
 
@@ -120,7 +128,7 @@
           </span>
 
           <section>
-            <!-- REMOVED: "What I Do" heading, keeping the content -->
+            <!-- "What I Do" heading removed, keeping content -->
             <p>
               My role is a mix of building systems and executing: I set up organizing documents and spreadsheets to track
               <strong>corporate outreach</strong>, <strong>influencer outreach</strong>, and <strong>junior chef applications</strong>—then I help
@@ -139,7 +147,7 @@
             </div>
           </section>
 
-          <section>
+          <section class="hff-about">
             <h2>About Hope Full Farm</h2>
             <p>
               Hope Full Farm is a Central Texas nonprofit focused on addressing childhood hunger and growing community impact through
@@ -181,13 +189,7 @@
             </div>
           </section>
 
-          <section>
-            <h2>My Focus Right Now</h2>
-            <p>
-              Build clean tracking systems for outreach + applications, keep the pipeline moving week-to-week, and help push the event
-              toward (and past) the fundraising goal.
-            </p>
-          </section>
+          <!-- REMOVED: "My Focus Right Now" section -->
 
         </div>
       </div>
