@@ -11,7 +11,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/custom.css" />
-
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
     <!-- Page-only styling (no custom.css changes needed) -->
@@ -33,12 +32,13 @@
         display: block;
       }
 
-      /* Small stat cards */
+      /* Stat cards (2 cards, centered) */
       .hff-stats {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 cards */
         gap: 1rem;
-        margin: 1.5rem 0 0.5rem 0;
+        margin: 1.5rem auto 0.5rem auto;
+        max-width: 780px; /* centers the grid nicely */
       }
       .hff-card {
         background: rgba(0,0,0,0.14);
@@ -57,7 +57,7 @@
         margin: 0;
       }
 
-      @media screen and (max-width: 980px) {
+      @media screen and (max-width: 736px) {
         .hff-stats { grid-template-columns: 1fr; }
       }
 
@@ -98,7 +98,6 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="hopefullfarms.html">Hope Full Farm</a></li>
-          <!-- Add more links later as you build pages -->
           <li><a href="https://www.hopefullfarm.org" target="_blank" rel="noopener">Hope Full Farm Website</a></li>
         </ul>
       </nav>
@@ -121,7 +120,7 @@
           </span>
 
           <section>
-            <h2>What I Do</h2>
+            <!-- REMOVED: "What I Do" heading, keeping the content -->
             <p>
               My role is a mix of building systems and executing: I set up organizing documents and spreadsheets to track
               <strong>corporate outreach</strong>, <strong>influencer outreach</strong>, and <strong>junior chef applications</strong>—then I help
@@ -136,10 +135,6 @@
               <div class="hff-card">
                 <p class="label">Raised So Far</p>
                 <p class="value">$45,000+</p>
-              </div>
-              <div class="hff-card">
-                <p class="label">Focus</p>
-                <p class="value">Farm to Fork Event</p>
               </div>
             </div>
           </section>
@@ -172,9 +167,8 @@
             </p>
           </section>
 
-          <!-- Gallery: HFF1 already shown, then HFF2 and HFF3 in order -->
+          <!-- Pictures: HFF1 already shown, then HFF2 and HFF3 in order (NO "Gallery" heading) -->
           <section class="hff-gallery">
-            <h2>Gallery</h2>
             <div class="box alt">
               <div class="row gtr-uniform">
                 <div class="col-6 col-12-medium">
