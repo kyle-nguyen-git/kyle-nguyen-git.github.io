@@ -57,18 +57,11 @@
         color: var(--accent) !important;
       }
 
-      /* Footer: force "Built with..." BELOW icons */
-      #footer .footer-links {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.7rem;
-        margin-bottom: 1.25rem;
-      }
-      #footer .footer-links .icons { margin: 0 !important; }
+      /* Footer: keep icons in same spot; place "Built with..." UNDER icons */
       #footer .built-with {
-        margin: 0 !important;
         display: block;
+        width: 100%;
+        margin: 0.75rem 0 0 0;
         text-align: center;
         font-size: 0.9rem;
         opacity: 0.85;
@@ -164,34 +157,37 @@
         </div>
       </div>
 
-     <!-- Footer -->
-<footer id="footer">
-  <div class="inner">
-    <ul class="icons">
-      <li>
-        <a href="mailto:ktnuyen04@gmail.com" class="icon solid fa-envelope">
-          <span class="label">Email</span>
-        </a>
-      </li>
-      <li>
-        <a href="https://github.com/kyle-nguyen-git" class="icon brands fa-github" target="_blank" rel="noopener">
-          <span class="label">GitHub</span>
-        </a>
-      </li>
-      <li>
-        <a href="https://www.linkedin.com/in/kyletrungnguyen" class="icon brands fa-linkedin" target="_blank" rel="noopener">
-          <span class="label">LinkedIn</span>
-        </a>
-      </li>
-    </ul>
+      <!-- Footer -->
+      <footer id="footer">
+        <div class="inner">
+          <ul class="icons">
+            <li>
+              <a href="mailto:ktnuyen04@gmail.com" class="icon solid fa-envelope">
+                <span class="label">Email</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/kyle-nguyen-git" class="icon brands fa-github" target="_blank" rel="noopener">
+                <span class="label">GitHub</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/kyletrungnguyen" class="icon brands fa-linkedin" target="_blank" rel="noopener">
+                <span class="label">LinkedIn</span>
+              </a>
+            </li>
+          </ul>
 
-    <p class="built-with">Built with HTML + CSS.</p>
+          <p class="built-with">Built with HTML + CSS.</p>
 
-    <ul class="copyright">
-      <li>&copy; Kyle Nguyen</li>
-    </ul>
-  </div>
-</footer>
+          <ul class="copyright">
+            <li>&copy; Kyle Nguyen</li>
+          </ul>
+        </div>
+      </footer>
+
+    </div>
+
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
