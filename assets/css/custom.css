@@ -264,24 +264,22 @@ a:hover { color: var(--text-main) !important; }
    ========================= */
 
 body.tight-top #main {
-  padding-top: 0 !important;           /* Phantom adds a big top pad */
+  padding-top: 0 !important;
 }
 
 body.tight-top #main > .inner {
-  padding-top: 1.25rem !important;     /* your new standard */
+  padding-top: 0.6rem !important;   /* was 1.25rem */
 }
 
-/* Pull the first header up slightly for a cleaner start */
 body.tight-top #main > .inner > header:first-child {
   padding-top: 0 !important;
-  margin-top: -1.15rem !important;
+  margin-top: -1.6rem !important;   /* was -1.15rem */
   margin-bottom: 2.25rem !important;
 }
 
-/* Mobile tweak */
 @media screen and (max-width: 736px) {
   body.tight-top #main > .inner > header:first-child {
-    margin-top: -0.85rem !important;
+    margin-top: -1.1rem !important; /* was -0.85rem */
     margin-bottom: 1.75rem !important;
   }
 }
