@@ -17,23 +17,26 @@
       /* Phantom adds a lot of top padding here */
       #main { padding-top: 0 !important; }
 
-      /* Keep a little breathing room, but much less than default */
-      #main > .inner { padding-top: 1.25rem !important; }
+      /* Keep a little breathing room, but less than default */
+      #main > .inner { padding-top: 0.85rem !important; }
 
       /* Pull the intro upward without touching the header/menu */
       header.intro {
         padding-top: 0 !important;
-        margin-top: -1.5rem !important;   /* key: moves everything up */
+        margin-top: -1.85rem !important;  /* MORE negative = moves UP */
         margin-bottom: 2.25rem !important;
       }
 
       /* Slightly tighten spacing before first section header */
       header.intro + .section-header {
-        margin-top: 2rem !important;
+        margin-top: 1.75rem !important;
       }
 
-     header.intro { margin-top: -1.15rem !important; }
-@media screen and (max-width: 736px) { header.intro { margin-top: -0.85rem !important; } }
+      @media screen and (max-width: 736px) {
+        #main > .inner { padding-top: 0.65rem !important; }
+        header.intro { margin-top: -1.35rem !important; }
+        header.intro + .section-header { margin-top: 1.5rem !important; }
+      }
     </style>
   </head>
 
@@ -220,4 +223,3 @@
 
   </body>
 </html>
-
