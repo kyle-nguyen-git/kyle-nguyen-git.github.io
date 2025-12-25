@@ -24,23 +24,18 @@
 
       .about-grid { align-items: flex-start; }
 
-      /*
-        Headshot:
-        - no squish (object-fit: cover)
-        - slightly taller + nudge the crop DOWN a touch
-      */
       .headshot-wrap {
         max-width: 680px;
         margin: 0 auto;
         border-radius: 18px;
         overflow: hidden;
-        height: 680px;              /* was 640px */
+        height: 680px;
       }
       .headshot-wrap img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: center 56%; /* was 40% -> moves image DOWN slightly */
+        object-position: center 56%;
         display: block;
       }
 
@@ -61,9 +56,9 @@
         color: var(--accent) !important;
       }
 
-      /* Built-with line */
-      .built-with {
-        margin: 1.25rem 0 0 0;
+      /* Built-with line (footer placement) */
+      #footer .built-with {
+        margin: 0.75rem 0 0 0;   /* space below the icon row */
         font-size: 0.9rem;
         opacity: 0.8;
         text-align: center;
@@ -77,7 +72,7 @@
 
         .headshot-wrap {
           max-width: 440px;
-          height: 600px;            /* was 560px */
+          height: 600px;
           margin: 0 auto 1.15rem auto;
         }
         .headshot-wrap img { object-position: center 46%; }
@@ -180,6 +175,7 @@
             </li>
           </ul>
 
+          <!-- This now sits directly under the icons row -->
           <p class="built-with">Built with HTML + CSS.</p>
 
           <ul class="copyright">
