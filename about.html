@@ -10,39 +10,44 @@
 
     <!-- Page-only styling -->
     <style>
-      /* Pull header closer to top */
-      #header { padding-top: 0.6rem !important; padding-bottom: 0.45rem !important; }
+      /* Bring header down slightly (but still tighter than default) */
+      #header { padding-top: 0.95rem !important; padding-bottom: 0.55rem !important; }
       #header > .inner { padding-top: 0 !important; padding-bottom: 0 !important; }
 
-      /* Reduce the big gap above content + title */
-      #main { padding-top: 0.65rem !important; }
+      /* Reduce big gap above content + title */
+      #main { padding-top: 0.75rem !important; }
       #main > .inner { padding-top: 0 !important; }
-      header.major { margin: 0 0 1.25rem 0 !important; }
+      header.major { margin: 0 0 1.15rem 0 !important; }
       header.major h1 { margin-top: 0 !important; }
 
       .about-grid { align-items: flex-start; }
 
-      /* Headshot: keep proportions, slight top/bottom crop, no squish */
+      /*
+        Headshot:
+        - no squish (object-fit: cover)
+        - less "zoom" by giving it more height (shows more of the photo)
+        - slight top/bottom crop only
+      */
       .headshot-wrap {
         max-width: 680px;
         margin: 0 auto;
         border-radius: 18px;
         overflow: hidden;
-        height: 520px;            /* controls vertical space */
+        height: 640px;            /* was 520px (more vertical space, less zoomed look) */
       }
       .headshot-wrap img {
         width: 100%;
         height: 100%;
         object-fit: cover;        /* crops without distortion */
-        object-position: center;  /* adjust if needed: center 35% etc */
+        object-position: center 40%; /* shift up a touch to keep more body visible */
         display: block;
       }
 
-      /* Nicer paragraph spacing */
-      .about-copy p { margin: 0 0 1.25rem 0; }
+      /* Nicer paragraph spacing (slightly tighter to match taller image) */
+      .about-copy p { margin: 0 0 1.05rem 0; }
 
       /* Links row: no box, consistent buttons */
-      .about-links { margin-top: 1.25rem; }
+      .about-links { margin-top: 1.15rem; }
       .about-links .actions { margin-bottom: 0; }
       .about-links .button {
         background: transparent !important;
@@ -57,13 +62,13 @@
 
       /* Mobile */
       @media screen and (max-width: 736px) {
-        #header { padding-top: 0.55rem !important; }
-        #main { padding-top: 0.55rem !important; }
+        #header { padding-top: 0.85rem !important; }
+        #main { padding-top: 0.65rem !important; }
 
         .headshot-wrap {
-          max-width: 420px;
-          height: 460px;
-          margin: 0 auto 1.25rem auto;
+          max-width: 440px;
+          height: 560px;          /* was 460px */
+          margin: 0 auto 1.15rem auto;
         }
       }
     </style>
