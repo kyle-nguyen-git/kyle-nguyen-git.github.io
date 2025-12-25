@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <!--
   Phantom by HTML5 UP
@@ -5,114 +6,37 @@
 -->
 <html>
   <head>
-    <title>1 Item 2 Guys — Kyle Nguyen</title>
+    <title>Kyle Nguyen</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/custom.css?v=11" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
+    <!-- Page-only: pull homepage content UP (reduce the big top gap) -->
     <style>
-      /* Tighten top spacing a bit */
-      #header { padding-top: 0.95rem !important; padding-bottom: 0.45rem !important; }
-      #header > .inner { padding-top: 0 !important; padding-bottom: 0 !important; }
-      #main { padding-top: 0.35rem !important; }
-      #main > .inner { padding-top: 0 !important; }
-      header.major { margin: 0 0 1rem 0 !important; }
-      header.major h1 { margin: 0 !important; }
+      /* Phantom adds a lot of top padding here */
+      #main { padding-top: 0 !important; }
 
-      /* Hero */
-      .hero-grid { align-items: flex-start; }
-      .hero-image {
-        border-radius: 18px;
-        overflow: hidden;
-        background: #000;
-      }
-      .hero-image img {
-        width: 100%;
-        height: 100%;
-        display: block;
-        object-fit: cover;
+      /* Keep a little breathing room, but less than default */
+      #main > .inner { padding-top: 0.85rem !important; }
+
+      /* Pull the intro upward without touching the header/menu */
+      header.intro {
+        padding-top: 0 !important;
+        margin-top: -1.85rem !important;  /* MORE negative = moves UP */
+        margin-bottom: 2.25rem !important;
       }
 
-      /* Soft cards (for stats + popups text) */
-      .soft-card {
-        background: rgba(255,255,255,0.04);
-        border: 1px solid rgba(255,255,255,0.08);
-        border-radius: 16px;
-        padding: 1.05rem 1.1rem;
+      /* Slightly tighten spacing before first section header */
+      header.intro + .section-header {
+        margin-top: 1.75rem !important;
       }
 
-      /* Quick stats */
-      .quick-stats {
-        margin-top: 1.25rem;
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 0.9rem;
-      }
-      .stat-card {
-        background: rgba(255,255,255,0.04);
-        border: 1px solid rgba(255,255,255,0.08);
-        border-radius: 16px;
-        padding: 0.9rem 1rem;
-      }
-      .stat-card .label {
-        font-size: 0.85rem;
-        opacity: 0.85;
-        margin-bottom: 0.25rem;
-      }
-      .stat-card .value {
-        font-size: 1.05rem;
-        color: var(--text-main);
-        font-weight: 600;
-      }
-
-      /* Buttons (match your About page style) */
-      .actions .button {
-        background: transparent !important;
-        border: 1px solid rgba(255,255,255,0.22) !important;
-        color: var(--text-main) !important;
-        box-shadow: none !important;
-      }
-      .actions .button:hover {
-        border-color: var(--accent) !important;
-        color: var(--accent) !important;
-      }
-
-      /* Section header (if your custom.css already styles it, this is harmless) */
-      .section-header {
-        margin-top: 3.0rem;
-        margin-bottom: 1.1rem;
-        padding-top: 1.1rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-      }
-      .section-header h2 {
-        font-size: 1.35rem;
-        font-weight: 600;
-        letter-spacing: 0.02em;
-        color: var(--text-main);
-        margin: 0;
-      }
-
-      /* Footer: make "Built with..." sit under icons */
-      #footer .icons {
-        width: 100% !important;
-        display: block !important;
-        margin-bottom: 0.75rem;
-      }
-      #footer .built-with {
-        display: block !important;
-        width: 100% !important;
-        clear: both !important;
-        margin: 0 0 1.25rem 0 !important;
-        text-align: center;
-        font-size: 0.9rem;
-        opacity: 0.85;
-      }
-
-      /* Mobile */
       @media screen and (max-width: 736px) {
-        .quick-stats { grid-template-columns: 1fr; }
+        #main > .inner { padding-top: 0.65rem !important; }
+        header.intro { margin-top: -1.35rem !important; }
+        header.intro + .section-header { margin-top: 1.5rem !important; }
       }
     </style>
   </head>
@@ -123,9 +47,6 @@
       <!-- Header -->
       <header id="header">
         <div class="inner">
-          <a href="index.html" class="logo">
-            <span class="title">Kyle Nguyen</span>
-          </a>
           <nav>
             <ul>
               <li><a href="#menu">Menu</a></li>
@@ -139,8 +60,7 @@
         <h2>Menu</h2>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="item2guys.html">1 Item 2 Guys</a></li>
+          <li><a href="about.html">About Me</a></li>
         </ul>
       </nav>
 
@@ -148,295 +68,120 @@
       <div id="main">
         <div class="inner">
 
-          <header class="major">
-            <h1>1 Item 2 Guys</h1>
+          <!-- Intro -->
+          <header class="intro">
+            <h1>Howdy, I'm Kyle</h1>
             <p>
-              A small pop-up project that turned into one of my favorite ways to create something fun with friends
-              and meet people through food.
+              I’m currently studying Human Biology at the University of Texas. My interests span computational biology, genomics, and exploring different fields across science and tech.
             </p>
           </header>
 
-          <!-- Hero -->
-          <div class="row gtr-200 hero-grid">
-            <div class="col-6 col-12-medium">
-              <div class="hero-image">
-                <!-- Replace with your best hero photo -->
-                <img src="images/1item2guys/hero.jpg" alt="1 Item 2 Guys pop-up" />
-              </div>
-            </div>
-
-            <div class="col-6 col-12-medium">
-              <h2 style="margin-top:0;">How it started</h2>
-              <p>
-                The idea started after going to a ramen pop-up on campus — it was simple, packed, and felt like an
-                actual experience instead of just grabbing food. After spending a summer in New York and seeing how
-                common pop-ups are there, I wanted to try building something like that back in Austin.
-              </p>
-              <p>
-                Since then, this has turned into a chance for us to create a unique night, connect with people,
-                and grow with the community around us.
-              </p>
-
-              <div class="soft-card" style="margin-top: 1.15rem;">
-                <p style="margin: 0 0 0.85rem 0;">
-                  If you want to see the food and vibe, the Instagram is basically the “home base.”
-                </p>
-                <ul class="actions" style="margin: 0;">
-                  <li>
-                    <a
-                      href="https://www.instagram.com/1item2guys/"
-                      class="button"
-                      target="_blank"
-                      rel="noopener"
-                    >
-                      Follow @1item2guys on Instagram
-                    </a>
-                  </li>
-                  <li>
-                    <a href="mailto:ktnuyen04@gmail.com?subject=1%20Item%202%20Guys%20Inquiry" class="button">
-                      Contact
-                    </a>
-                  </li>
-                </ul>
-              </div>
-
-              <!-- Quick stats (edit anytime) -->
-              <div class="quick-stats">
-                <div class="stat-card">
-                  <div class="label">Instagram</div>
-                  <div class="value">~1,000 followers</div>
-                </div>
-                <div class="stat-card">
-                  <div class="label">Demand</div>
-                  <div class="value">300+ reservation requests</div>
-                </div>
-                <div class="stat-card">
-                  <div class="label">Reach</div>
-                  <div class="value">300K+ total views</div>
-                </div>
-              </div>
-
-              <p style="margin-top: 1.15rem;">
-                A couple things I’m proud of: WhenWhereWhatAustin follows the page, and we’ve had guests fly in from
-                places like Florida, Pennsylvania, North Carolina, and across Texas to come try it.
-              </p>
-            </div>
-          </div>
-
-          <!-- Food Photos -->
-          <section class="section-header" id="food">
-            <h2>Food photos</h2>
-          </section>
-
-          <p>
-            Replace these with your best shots. I’d do 6–9 total here (enough to feel real, not overwhelming).
-          </p>
-
-          <section class="tiles">
-            <article class="style1">
-              <span class="image">
-                <img src="images/1item2guys/food-1.jpg" alt="Food photo 1" />
-              </span>
-              <a href="#">
-                <h2>Food</h2>
-                <div class="content"><p>Drop your caption here (optional).</p></div>
-              </a>
-            </article>
-
-            <article class="style2">
-              <span class="image">
-                <img src="images/1item2guys/food-2.jpg" alt="Food photo 2" />
-              </span>
-              <a href="#">
-                <h2>Food</h2>
-                <div class="content"><p>Drop your caption here (optional).</p></div>
-              </a>
-            </article>
-
-            <article class="style3">
-              <span class="image">
-                <img src="images/1item2guys/food-3.jpg" alt="Food photo 3" />
-              </span>
-              <a href="#">
-                <h2>Food</h2>
-                <div class="content"><p>Drop your caption here (optional).</p></div>
-              </a>
-            </article>
-
-            <article class="style4">
-              <span class="image">
-                <img src="images/1item2guys/food-4.jpg" alt="Food photo 4" />
-              </span>
-              <a href="#">
-                <h2>Food</h2>
-                <div class="content"><p>Drop your caption here (optional).</p></div>
-              </a>
-            </article>
-
-            <article class="style5">
-              <span class="image">
-                <img src="images/1item2guys/food-5.jpg" alt="Food photo 5" />
-              </span>
-              <a href="#">
-                <h2>Food</h2>
-                <div class="content"><p>Drop your caption here (optional).</p></div>
-              </a>
-            </article>
-
-            <article class="style6">
-              <span class="image">
-                <img src="images/1item2guys/food-6.jpg" alt="Food photo 6" />
-              </span>
-              <a href="#">
-                <h2>Food</h2>
-                <div class="content"><p>Drop your caption here (optional).</p></div>
-              </a>
-            </article>
-          </section>
-
-          <!-- Popups -->
-          <section class="section-header" id="popups">
-            <h2>Pop-ups</h2>
-          </section>
-
-          <p>
-            We’ve done 3 pop-ups so far. Each one has its own set of photos + menu.
-          </p>
-
-          <!-- Popup 1 -->
-          <div class="soft-card" style="margin-bottom: 1.25rem;">
-            <h3 style="margin-top:0;">Pop-up #1</h3>
-            <p style="margin-bottom: 0;">
-              Add a short line about the vibe/location/date if you want.
-            </p>
-          </div>
-
-          <section class="tiles">
-            <article class="style1">
-              <span class="image">
-                <img src="images/1item2guys/popup1-1.jpg" alt="Popup 1 photo 1" />
-              </span>
-              <a href="#"><h2>Pop-up #1</h2><div class="content"><p>Photo</p></div></a>
-            </article>
-            <article class="style2">
-              <span class="image">
-                <img src="images/1item2guys/popup1-2.jpg" alt="Popup 1 photo 2" />
-              </span>
-              <a href="#"><h2>Pop-up #1</h2><div class="content"><p>Photo</p></div></a>
-            </article>
-            <article class="style3">
-              <span class="image">
-                <img src="images/1item2guys/popup1-3.jpg" alt="Popup 1 photo 3" />
-              </span>
-              <a href="#"><h2>Pop-up #1</h2><div class="content"><p>Photo</p></div></a>
-            </article>
-
-            <!-- Menu image for popup 1 -->
-            <article class="style4">
-              <span class="image">
-                <img src="images/1item2guys/menu1.jpg" alt="Menu for pop-up 1" />
-              </span>
-              <a href="#"><h2>Menu</h2><div class="content"><p>Pop-up #1 menu</p></div></a>
-            </article>
-          </section>
-
-          <!-- Popup 2 -->
-          <div class="soft-card" style="margin: 2.25rem 0 1.25rem 0;">
-            <h3 style="margin-top:0;">Pop-up #2</h3>
-            <p style="margin-bottom: 0;">
-              Add a short line about the vibe/location/date if you want.
-            </p>
-          </div>
-
-          <section class="tiles">
-            <article class="style5">
-              <span class="image">
-                <img src="images/1item2guys/popup2-1.jpg" alt="Popup 2 photo 1" />
-              </span>
-              <a href="#"><h2>Pop-up #2</h2><div class="content"><p>Photo</p></div></a>
-            </article>
-            <article class="style6">
-              <span class="image">
-                <img src="images/1item2guys/popup2-2.jpg" alt="Popup 2 photo 2" />
-              </span>
-              <a href="#"><h2>Pop-up #2</h2><div class="content"><p>Photo</p></div></a>
-            </article>
-            <article class="style1">
-              <span class="image">
-                <img src="images/1item2guys/popup2-3.jpg" alt="Popup 2 photo 3" />
-              </span>
-              <a href="#"><h2>Pop-up #2</h2><div class="content"><p>Photo</p></div></a>
-            </article>
-
-            <!-- Menu image for popup 2 -->
-            <article class="style2">
-              <span class="image">
-                <img src="images/1item2guys/menu2.jpg" alt="Menu for pop-up 2" />
-              </span>
-              <a href="#"><h2>Menu</h2><div class="content"><p>Pop-up #2 menu</p></div></a>
-            </article>
-          </section>
-
-          <!-- Popup 3 -->
-          <div class="soft-card" style="margin: 2.25rem 0 1.25rem 0;">
-            <h3 style="margin-top:0;">Pop-up #3</h3>
-            <p style="margin-bottom: 0;">
-              Add a short line about the vibe/location/date if you want.
-            </p>
-          </div>
-
-          <section class="tiles">
-            <article class="style3">
-              <span class="image">
-                <img src="images/1item2guys/popup3-1.jpg" alt="Popup 3 photo 1" />
-              </span>
-              <a href="#"><h2>Pop-up #3</h2><div class="content"><p>Photo</p></div></a>
-            </article>
-            <article class="style4">
-              <span class="image">
-                <img src="images/1item2guys/popup3-2.jpg" alt="Popup 3 photo 2" />
-              </span>
-              <a href="#"><h2>Pop-up #3</h2><div class="content"><p>Photo</p></div></a>
-            </article>
-            <article class="style5">
-              <span class="image">
-                <img src="images/1item2guys/popup3-3.jpg" alt="Popup 3 photo 3" />
-              </span>
-              <a href="#"><h2>Pop-up #3</h2><div class="content"><p>Photo</p></div></a>
-            </article>
-
-            <!-- Menu image for popup 3 -->
-            <article class="style6">
-              <span class="image">
-                <img src="images/1item2guys/menu3.jpg" alt="Menu for pop-up 3" />
-              </span>
-              <a href="#"><h2>Menu</h2><div class="content"><p>Pop-up #3 menu</p></div></a>
-            </article>
-          </section>
-
-          <!-- Close -->
+          <!-- Research -->
           <section class="section-header">
-            <h2>Want updates?</h2>
+            <h2>Research</h2>
           </section>
 
-          <div class="soft-card">
-            <p style="margin: 0 0 1rem 0;">
-              The easiest way to keep up with future drops is the Instagram. That’s where we post menus, dates,
-              and the vibe.
-            </p>
-            <ul class="actions" style="margin: 0;">
-              <li>
-                <a href="https://www.instagram.com/1item2guys/" class="button" target="_blank" rel="noopener">
-                  Follow @1item2guys
-                </a>
-              </li>
-              <li>
-                <a href="mailto:ktnuyen04@gmail.com?subject=1%20Item%202%20Guys%20Inquiry" class="button">
-                  Reach out
-                </a>
-              </li>
-            </ul>
-          </div>
+          <section class="tiles">
+            <!-- NYU -->
+            <article class="style2">
+              <span class="image">
+                <img src="images/nyu-neoantigens.png" alt="Cancer neoantigen pipeline" />
+              </span>
+              <a href="nyu-research.html">
+                <h2>Computational Pipeline for Cancer Neoantigen Discovery</h2>
+                <div class="content">
+                  <p>(2025) Applied computational genomics to cancer-related datasets.</p>
+                </div>
+              </a>
+            </article>
+
+            <!-- UTMB -->
+            <article class="style1">
+              <span class="image">
+                <img src="images/utmb-exosomes.png" alt="Virus-infected exosomes" />
+              </span>
+              <a href="utmb.html">
+                <h2>Differential Gene Expression in Virus-Infected Exosomes</h2>
+                <div class="content">
+                  <p>(2024) Translational research using biological data analysis.</p>
+                </div>
+              </a>
+            </article>
+          </section>
+
+          <!-- Projects -->
+          <section class="section-header">
+            <h2>Projects &amp; Ventures</h2>
+          </section>
+
+          <section class="tiles">
+
+            <!-- 1) Hope Full Farm -->
+            <article class="style4">
+              <span class="image">
+                <img src="images/hopefullfarms.png" alt="Hope Full Farm" />
+              </span>
+              <a href="hopefullfarms.html">
+                <h2>Hope Full Farm</h2>
+                <div class="content">
+                  <p>(2025–2026) Community-focused nonprofit outreach and operations.</p>
+                </div>
+              </a>
+            </article>
+
+            <!-- 2) 1 Item 2 Guys -->
+            <article class="style5">
+              <span class="image">
+                <img src="images/1item2guys.png" alt="1 Item 2 Guys" />
+              </span>
+              <a href="item2guys.html">
+                <h2>1 Item 2 Guys</h2>
+                <div class="content">
+                  <p>(2025–2026) Pop-up food concept built around execution and simplicity.</p>
+                </div>
+              </a>
+            </article>
+
+            <!-- 3) Nuzzle -->
+            <article class="style6 featured">
+              <span class="image">
+                <img src="images/nuzzle.png" alt="Nuzzle" />
+              </span>
+              <a href="generic.html">
+                <h2>Nuzzle</h2>
+                <div class="content">
+                  <p>(2025) Pediatric comfort device exploring design in clinical settings.</p>
+                </div>
+              </a>
+            </article>
+
+            <!-- 4) ParkNow -->
+            <article class="style3">
+              <span class="image">
+                <img src="images/parknow.png" alt="ParkNow" />
+              </span>
+              <a href="generic.html">
+                <h2>ParkNow</h2>
+                <div class="content">
+                  <p>(2025) Startup tackling short-term parking access.</p>
+                </div>
+              </a>
+            </article>
+
+            <!-- 5) Callalily -->
+            <article class="style3">
+              <span class="image">
+                <img src="images/callalily.png" alt="Callalily" />
+              </span>
+              <a href="generic.html">
+                <h2>Callalily</h2>
+                <div class="content">
+                  <p>(2025) Hackathon project focused on technology-driven pain management.</p>
+                </div>
+              </a>
+            </article>
+
+          </section>
 
         </div>
       </div>
@@ -446,7 +191,7 @@
         <div class="inner">
           <ul class="icons">
             <li>
-              <a href="mailto:ktnuyen04@gmail.com" class="icon solid fa-envelope">
+              <a href="mailto:kylenguyen@utexas.edu" class="icon solid fa-envelope">
                 <span class="label">Email</span>
               </a>
             </li>
@@ -456,13 +201,11 @@
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/kyletrungnguyen" class="icon brands fa-linkedin" target="_blank" rel="noopener">
+              <a href="https://www.linkedin.com/in/YOUR-LINKEDIN-HERE/" class="icon brands fa-linkedin" target="_blank" rel="noopener">
                 <span class="label">LinkedIn</span>
               </a>
             </li>
           </ul>
-
-          <p class="built-with">Built with HTML + CSS.</p>
 
           <ul class="copyright">
             <li>&copy; Kyle Nguyen</li>
@@ -478,5 +221,8 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+
   </body>
 </html>
+
+
