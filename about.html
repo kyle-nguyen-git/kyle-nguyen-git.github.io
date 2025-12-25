@@ -57,11 +57,17 @@
         color: var(--accent) !important;
       }
 
-      /* Footer: keep icons in same spot; place "Built with..." UNDER icons */
+      /* Footer: keep icons where they are, but force "Built with..." to its own line */
+      #footer .icons {
+        width: 100% !important;     /* makes the icon row take the full line */
+        display: block !important;  /* prevents inline flow with the text */
+        margin-bottom: 0.75rem;     /* space between icons and built-with line */
+      }
       #footer .built-with {
-        display: block;
-        width: 100%;
-        margin: 0.75rem 0 0 0;
+        display: block !important;
+        width: 100% !important;
+        clear: both !important;
+        margin: 0 0 1.25rem 0 !important; /* space before © line */
         text-align: center;
         font-size: 0.9rem;
         opacity: 0.85;
