@@ -8,26 +8,30 @@
     <link rel="stylesheet" href="assets/css/custom.css?v=11" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-    <!-- Page-only styling  -->
+    <!-- Page-only styling -->
     <style>
-      /* 2-column layout on desktop, stacked on mobile */
+      /* Desktop: image left, text right */
       .about-grid { align-items: flex-start; }
 
-      <!-- Headshot (full image, centered) -->
-<span class="image fit" style="max-width: 520px; margin: 0 auto 2rem auto; border-radius: 18px; overflow: hidden;">
-  <img src="images/KyleNguyenUTRun.JPG" alt="Kyle Nguyen headshot" style="display:block; width:100%; height:auto;" />
-</span>
+      /* Headshot wrapper (full image, no crop) */
+      .headshot-wrap {
+        max-width: 520px;
+        margin: 0 auto;
+        border-radius: 18px;
+        overflow: hidden;
+      }
+      .headshot-wrap img {
+        display: block;
+        width: 100%;
+        height: auto; /* key: full image, no crop */
+      }
 
-      /* Slightly nicer paragraph spacing in the right column */
+      /* Nicer paragraph spacing */
       .about-copy p { margin: 0 0 1.25rem 0; }
 
-      /* Mobile: stack + center image */
+      /* Mobile: stack + slightly smaller image */
       @media screen and (max-width: 736px) {
-        .headshot-wrap {
-          max-width: 300px;
-          margin: 0 auto 1.5rem auto;
-        }
-        .headshot-wrap img { height: 380px; }
+        .headshot-wrap { max-width: 360px; margin: 0 auto 1.5rem auto; }
       }
     </style>
   </head>
@@ -68,6 +72,7 @@
 
           <!-- Layout: image left, text right (desktop); stacked (mobile) -->
           <div class="row gtr-200 about-grid">
+
             <!-- Left: Headshot -->
             <div class="col-5 col-12-medium">
               <div class="headshot-wrap">
@@ -104,6 +109,7 @@
                 </ul>
               </section>
             </div>
+
           </div>
 
         </div>
