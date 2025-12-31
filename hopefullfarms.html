@@ -37,10 +37,10 @@
         margin-top: 1.25rem;
       }
 
-      /* Stat cards (2 cards, centered) */
+      /* Stat cards (1 card, centered) */
       .hff-stats {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: minmax(0, 1fr);
         gap: 1rem;
         margin: 1.5rem auto 0.5rem auto;
         max-width: 780px;
@@ -60,10 +60,6 @@
         font-size: 1.25rem;
         font-weight: 600;
         margin: 0;
-      }
-
-      @media screen and (max-width: 736px) {
-        .hff-stats { grid-template-columns: 1fr; }
       }
 
       /* Add spacing between fundraising/stat section and About section */
@@ -117,8 +113,8 @@
           <header>
             <h1>Hope Full Farm</h1>
             <p>
-              Through <strong>Project Advance Austin</strong> at UT Austin, I serve as a project management consultant supporting
-              Hope Full Farm’s <strong>Farm to Fork: Junior Chef Challenge</strong>.
+              Through Project Advance Austin at UT Austin, I serve as a project management consultant supporting
+              Hope Full Farm’s Farm to Fork: Junior Chef Challenge.
             </p>
           </header>
 
@@ -131,15 +127,11 @@
             <!-- "What I Do" heading removed, keeping content -->
             <p>
               My role is a mix of building systems and executing: I set up organizing documents and spreadsheets to track
-              <strong>corporate outreach</strong>, <strong>influencer outreach</strong>, and <strong>junior chef applications</strong>—then I help
-              run the outreach itself through <strong>cold calls</strong> and <strong>email follow-ups</strong>.
+              corporate outreach, influencer outreach, and junior chef applications—then I help run the outreach itself through
+              cold calls and email follow-ups.
             </p>
 
             <div class="hff-stats">
-              <div class="hff-card">
-                <p class="label">Fundraising Goal</p>
-                <p class="value">$70,000+</p>
-              </div>
               <div class="hff-card">
                 <p class="label">Raised So Far</p>
                 <p class="value">$45,000+</p>
@@ -156,7 +148,7 @@
 
             <ul>
               <li>
-                <strong>Mission:</strong> fight childhood hunger and support future regenerative farmers.
+                Mission: fight childhood hunger and support future regenerative farmers.
               </li>
             </ul>
 
