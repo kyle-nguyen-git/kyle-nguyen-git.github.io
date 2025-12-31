@@ -20,6 +20,8 @@
       #main > .inner { padding-top: 0 !important; }
       header.major { margin: 0 0 1rem 0 !important; }
       header.major h1 { margin: 0 !important; }
+      /* Add space between title + intro text */
+      header.major p { margin-top: 0.75rem !important; }
 
       /* Hero */
       .hero-grid { align-items: flex-start; }
@@ -79,21 +81,6 @@
         color: var(--accent) !important;
       }
 
-      /* Section header */
-      .section-header {
-        margin-top: 2.5rem;
-        margin-bottom: 1.1rem;
-        padding-top: 1.1rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-      }
-      .section-header h2 {
-        font-size: 1.35rem;
-        font-weight: 600;
-        letter-spacing: 0.02em;
-        color: var(--text-main);
-        margin: 0;
-      }
-
       /* Two-image mini gallery */
       .mini-grid .image.fit img {
         border-radius: 18px;
@@ -139,8 +126,8 @@
           <header class="major">
             <h1>1 Item 2 Guys</h1>
             <p>
-              A small pop-up project that turned into one of my favorite ways to create something fun with friends
-              and meet people through food.
+              An upscale pop-up dining experience where we serve one item per drop.
+              It turned into one of my favorite ways to build something with friends and meet people through food.
             </p>
           </header>
 
@@ -156,13 +143,13 @@
             <div class="col-6 col-12-medium">
               <h2 style="margin-top:0;">How it started</h2>
               <p>
-                The idea started after going to a ramen pop-up on campus — it was simple, packed, and felt like an
-                actual experience instead of just grabbing food. After spending a summer in New York and seeing how
-                common pop-ups are there, I wanted to try building something like that back in Austin.
+                The idea started after seeing a ramen pop-up on campus — long line, tight menu, and it felt more like
+                an event than just grabbing food. Then I spent a summer in New York and realized pop-ups are everywhere,
+                so I wanted to try building something like that back in Austin.
               </p>
               <p>
-                Since then, this has turned into a chance for us to create a unique night, connect with people,
-                and grow with the community around us.
+                Since then, it’s become a chance for us to create a legit night, connect with people, and keep getting
+                better each time we do it.
               </p>
 
               <div class="soft-card" style="margin-top: 1.15rem;">
@@ -175,11 +162,6 @@
                       rel="noopener"
                     >
                       Follow @1item2guys on Instagram
-                    </a>
-                  </li>
-                  <li>
-                    <a href="mailto:ktnuyen04@gmail.com?subject=1%20Item%202%20Guys%20Inquiry" class="button">
-                      Contact
                     </a>
                   </li>
                 </ul>
@@ -209,11 +191,7 @@
           </div>
 
           <!-- Two extra images (food + Instagram homepage) -->
-          <section class="section-header">
-            <h2>Quick look</h2>
-          </section>
-
-          <section class="mini-grid">
+          <section class="mini-grid" style="margin-top: 2.0rem;">
             <div class="box alt">
               <div class="row gtr-uniform">
                 <div class="col-6 col-12-medium">
@@ -231,30 +209,6 @@
               </div>
             </div>
           </section>
-
-          <!-- Close -->
-          <section class="section-header">
-            <h2>Want updates?</h2>
-          </section>
-
-          <div class="soft-card">
-            <p style="margin: 0 0 1rem 0;">
-              The easiest way to keep up with future drops is the Instagram. That’s where we post menus, dates,
-              and the vibe.
-            </p>
-            <ul class="actions" style="margin: 0;">
-              <li>
-                <a href="https://www.instagram.com/1item2guys/" class="button" target="_blank" rel="noopener">
-                  Follow @1item2guys
-                </a>
-              </li>
-              <li>
-                <a href="mailto:ktnuyen04@gmail.com?subject=1%20Item%202%20Guys%20Inquiry" class="button">
-                  Reach out
-                </a>
-              </li>
-            </ul>
-          </div>
 
         </div>
       </div>
