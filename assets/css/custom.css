@@ -1,25 +1,32 @@
 /* =========================
-   Kyle — Custom Neon Palette
+   Kyle — Custom Warm Palette
    ========================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
   /* Page */
-  --bg-main: #360185;
-  --bg-secondary: rgba(0, 0, 0, 0.18);
+  --bg-main: #FAF3E1;
+  --bg-secondary: #F5E7C6;
 
   /* Text */
-  --text-main: #F4B342;     /* bright gold */
-  --text-muted: #D99A2E;    /* slightly darker gold for paragraphs/blurbs */
+  --text-main: #222222;
+  --text-muted: rgba(34, 34, 34, 0.72);
+
+  /* Accent */
+  --accent: #FF6D1F;
 
   /* Tiles (alternating overlay colors) */
-  --tile-a: #8F0177;
-  --tile-b: #B20F6A;        /* in-between */
-  --tile-c: #DE1A58;
+  /* Keep overlays light so dark text is readable */
+  --tile-a: rgba(245, 231, 198, 0.92);
+  --tile-b: rgba(245, 231, 198, 0.84);
+  --tile-c: rgba(245, 231, 198, 0.76);
 
   /* Hover film (darken image on hover for readability) */
-  --hover-film: rgba(0, 0, 0, 0.16);
+  --hover-film: rgba(34, 34, 34, 0.10);
+
+  /* Soft borders */
+  --border-soft: rgba(34, 34, 34, 0.12);
 }
 
 /* =========================
@@ -40,7 +47,7 @@ h1, h2, h3, h4, h5, h6 {
 p, li { color: var(--text-muted); }
 
 a { color: var(--text-main); }
-a:hover { color: var(--text-main) !important; }
+a:hover { color: var(--accent) !important; }
 
 #wrapper,
 #main,
@@ -114,7 +121,7 @@ a:hover { color: var(--text-main) !important; }
   line-height: 1.5;
 }
 
-/* Hover blurbs = darker gold */
+/* Hover blurbs */
 .tiles article .content p {
   color: var(--text-muted) !important;
   margin: 0;
@@ -163,7 +170,7 @@ a:hover { color: var(--text-main) !important; }
 /* Keep overlay visible */
 .tiles article > a::before,
 .tiles article > .image::before {
-  opacity: 0.86 !important; /* base overlay strength */
+  opacity: 0.78 !important; /* tuned for light theme */
 }
 
 /* Alternate overlay colors */
@@ -189,7 +196,7 @@ a:hover { color: var(--text-main) !important; }
 /* Keep overlay but darken slightly */
 .tiles article > a:hover::before,
 .tiles article > a:hover .image::before {
-  opacity: 0.92 !important;
+  opacity: 0.84 !important;
 }
 
 /* Dim image a bit on hover */
@@ -222,7 +229,7 @@ a:hover { color: var(--text-main) !important; }
   margin-top: 3.5rem;
   margin-bottom: 1.25rem;
   padding-top: 1.25rem;
-  border-top: 1px solid rgba(244, 179, 66, 0.25);
+  border-top: 1px solid var(--border-soft);
 }
 
 .section-header h2 {
@@ -247,7 +254,7 @@ a:hover { color: var(--text-main) !important; }
 
 #footer {
   background: transparent !important;
-  border-top: 1px solid rgba(244, 179, 66, 0.25);
+  border-top: 1px solid var(--border-soft);
   margin-top: 4rem;
   padding-top: 2rem;
 }
@@ -256,6 +263,10 @@ a:hover { color: var(--text-main) !important; }
 #footer li,
 #footer a {
   color: var(--text-muted);
+}
+
+#footer a:hover {
+  color: var(--accent) !important;
 }
 
 /* =========================
