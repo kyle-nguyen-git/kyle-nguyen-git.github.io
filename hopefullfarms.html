@@ -37,20 +37,26 @@
         margin-top: 1.25rem;
       }
 
-      /* Stat cards (1 card, centered) */
+      /* Stat card (1 card, centered, not full-width) */
       .hff-stats {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr);
-        gap: 1rem;
+        display: flex;
+        justify-content: center;
         margin: 1.5rem auto 0.5rem auto;
-        max-width: 780px;
       }
+
       .hff-card {
         background: rgba(0,0,0,0.14);
         border-radius: 16px;
-        padding: 1.1rem 1.1rem;
+        padding: 1.0rem 1.1rem;
         border: 1px solid rgba(255,255,255,0.08);
+
+        /* key: make it a smaller centered box */
+        width: fit-content;
+        min-width: 240px;
+        max-width: 360px;
+        text-align: center;
       }
+
       .hff-card .label {
         opacity: 0.85;
         font-size: 0.9rem;
@@ -133,7 +139,7 @@
             <div class="hff-stats">
               <div class="hff-card">
                 <p class="label">Raised So Far</p>
-                <p class="value">$45,000+</p>
+                <p class="value">$80,000+</p>
               </div>
             </div>
           </section>
@@ -144,12 +150,6 @@
               Hope Full Farm is a Central Texas nonprofit focused on addressing childhood hunger and growing community impact through
               its farm-based work and programs.
             </p>
-
-            <ul>
-              <li>
-                Mission: fight childhood hunger and support future regenerative farmers.
-              </li>
-            </ul>
 
             <ul class="actions">
               <li><a class="button primary" href="https://www.hopefullfarm.org" target="_blank" rel="noopener">Visit Hope Full Farm</a></li>
